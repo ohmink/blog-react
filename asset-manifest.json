@@ -1,17 +1,22 @@
 {
   "files": {
-    "main.js": "/static/js/main.dc50ceda.chunk.js",
-    "main.js.map": "/static/js/main.dc50ceda.chunk.js.map",
+    "main.js": "/static/js/main.a9ac1118.chunk.js",
+    "main.js.map": "/static/js/main.a9ac1118.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.5a8800c1.js",
     "runtime-main.js.map": "/static/js/runtime-main.5a8800c1.js.map",
-    "static/js/2.6d852ea2.chunk.js": "/static/js/2.6d852ea2.chunk.js",
-    "static/js/2.6d852ea2.chunk.js.map": "/static/js/2.6d852ea2.chunk.js.map",
+    "static/js/2.1214d581.chunk.js": "/static/js/2.1214d581.chunk.js",
+    "static/js/2.1214d581.chunk.js.map": "/static/js/2.1214d581.chunk.js.map",
     "index.html": "/index.html",
-    "static/js/2.6d852ea2.chunk.js.LICENSE.txt": "/static/js/2.6d852ea2.chunk.js.LICENSE.txt"
+    "static/js/2.1214d581.chunk.js.LICENSE.txt": "/static/js/2.1214d581.chunk.js.LICENSE.txt",
+    "static/media/cupid_icon.44106d5a.png": "/static/media/cupid_icon.44106d5a.png",
+    "static/media/flag_white.6c26addd.png": "/static/media/flag_white.6c26addd.png",
+    "static/media/gom_icon.b3dafe02.png": "/static/media/gom_icon.b3dafe02.png",
+    "static/media/project_white.5a94ff73.png": "/static/media/project_white.5a94ff73.png",
+    "static/media/user_white.6d07f582.png": "/static/media/user_white.6d07f582.png"
   },
   "entrypoints": [
     "static/js/runtime-main.5a8800c1.js",
-    "static/js/2.6d852ea2.chunk.js",
-    "static/js/main.dc50ceda.chunk.js"
+    "static/js/2.1214d581.chunk.js",
+    "static/js/main.a9ac1118.chunk.js"
   ]
 }
