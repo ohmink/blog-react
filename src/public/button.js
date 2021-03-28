@@ -23,6 +23,7 @@ const EmptyButton = styled.button`
 `;
 
 const Text = styled.p`
+  text-decoration: none;
   margin: 0;
   margin-left: 5px;
   padding-top: 5px;

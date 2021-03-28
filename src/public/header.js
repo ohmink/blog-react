@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "./button";
 import Home from "../icons/home_white.png";
@@ -29,22 +30,32 @@ const HeaderTextContainer = styled.div`
 
 const ButtonContainer = styled.div`
   flex: 0.65;
-
+  text-decoration: none;
   display: flex;
   flex: row;
   justify-content: center;
   align-items: center;
 `;
 
+const images = [Home, User, Project, Flag];
+const names = ["Home", "About", "Project", "Blog"];
+const links = ["/", "/about", "/project", "/blog"];
+
 export const Header = () => {
+  useEffect(() => {
+    const headLinks = document.querySelectorAll(".header-link");
+    headLinks.forEach((link) => (link.style.textDecoration = "none"));
+  }, []);
+
   return (
     <Container>
       <HeaderTextContainer>My</HeaderTextContainer>
       <ButtonContainer>
-        <Button text="Home" color="white" image={Home} isFill={true} />
-        <Button text="About." color="white" image={User} isFill={true} />
-        <Button text="Project" color="white" image={Project} isFill={true} />
-        <Button text="Blog" color="white" image={Flag} isFill={true} />
+        {images.map((img, idx) => (
+          <Link to={links[idx]} className="header-link" key={idx}>
+            <Button text={names[idx]} color="white" image={img} isFill={true} />
+          </Link>
+        ))}
         <Button
           text="Github"
           color="black"

@@ -2,15 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  width: 100px;
-  height: 100px;
+  width: ${(props) => (props.width ? props.width : "100px")};
+  height: ${(props) => (props.height ? props.height : "100px")};
 
-  background-color: white;
+  color: ${(props) => (props.color ? props.color : "black")};
   border-radius: 5px;
 
-  margin: auto;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const Card = () => {
-  return <CardContainer></CardContainer>;
+export const Card = ({ text, ...props }) => {
+  return <CardContainer {...props}>{text}</CardContainer>;
 };
