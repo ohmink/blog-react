@@ -10,6 +10,7 @@ import Flag from "../icons/flag_white.png";
 const Container = styled.div`
   height: 50px;
   padding: 1rem;
+  padding-bottom: 0;
   color: #fecb00;
   font-weight: bold;
   display: flex;

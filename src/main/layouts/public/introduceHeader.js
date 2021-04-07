@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 import { Card } from "./card";
-import { fadeIn, fadeOut, rotation } from "../../../public/animations";
+import { fadeIn, rotation } from "../../../public/animations";
 import keyboard from "../../../icons/keyboard.png";
 
 const Container = styled.div`
