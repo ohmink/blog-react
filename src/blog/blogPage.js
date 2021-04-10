@@ -1,6 +1,7 @@
 import React from "react";
+import { Route } from "react-router-dom";
 import styled from "styled-components";
-import { Taps } from "./layouts/taps";
+import { TagList } from "./layouts/tagList";
 import { List } from "./layouts/list";
 
 const BlogContainer = styled.div`
@@ -9,15 +10,16 @@ const BlogContainer = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
-  width: 70%;
+  width: 80%;
+  height: 60vh;
   margin: 5rem auto;
 `;
 
 export const BlogPage = () => {
   return (
     <BlogContainer>
-      <Taps />
-      <List />
+      <TagList />
+      <Route path="/blog/:tag" component={List} />
     </BlogContainer>
   );
 };

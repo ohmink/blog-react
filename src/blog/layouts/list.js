@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import * as fs from "fs";
+import { JsList } from "../category/javascript/index";
 
 const ListContainer = styled.div`
   flex: 1;
@@ -9,16 +9,20 @@ const ListContainer = styled.div`
   justify-content: center;
   align-items: baseline;
   margin-left: 10rem;
+  width: 500px;
+  heigth: 500px;
 `;
 
-export const List = () => {
-  useEffect(() => {
-    fs.readdir("./", (err, list) => console.log(list));
-  }, []);
+export const List = (props) => {
   return (
     <ListContainer>
-      <p>test1</p>
-      <p>test2</p>
+      {props.match.params.tag === "javascript" ? (
+        <JsList />
+      ) : (
+        <div>
+          <h1>글이 존재하지 않습니다!</h1>
+        </div>
+      )}
     </ListContainer>
   );
 };
