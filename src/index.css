@@ -10,10 +10,79 @@ body {
   background-image: url(./icons/background.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .blog_tag {
   text-decoration: none;
   color: white;
   margin: 1rem 0;
+}
+
+.blog_post_button {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  margin: 0;
+}
+
+.markdown {
+  background-color: white;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 90%;
+  height: fit-content;
+  color: black;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+  -ms-overflow-style: auto;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #24ccc3;
+  border-radius: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: #0d4845;
+}
+
+.markdown blockquote {
+  margin-top: 0;
+  padding-left: 5px;
+  border-left: 5px solid lightseagreen;
+}
+.markdown blockquote p {
+  margin: 0;
+}
+
+.markdown p {
+  margin-top: 0;
+}
+
+.markdown p img {
+  max-width: 80%;
+}
+
+.markdown ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown ul {
+  margin-top: 0;
+}
+
+.markdown pre {
+  margin-top: 0;
 }
