@@ -4,15 +4,20 @@ import styled from "styled-components";
 
 const TapsContainer = styled.div`
   flex: 0.3;
-
+  display: flex;
   justify-content: center;
   align-items: center;
-
   height: 100%;
 `;
 
 const Tags = styled.ul`
+  min-width: 200px;
+  margin-top: 0;
   list-style: none;
+`;
+
+const TagsTitle = styled.h3`
+  margin-top: 0;
 `;
 
 const Tag = styled.li`
@@ -61,7 +66,7 @@ export const TagList = () => {
   return (
     <TapsContainer>
       <Tags>
-        <h3>태그 목록</h3>
+        <TagsTitle>태그 목록</TagsTitle>
         <Line />
         {category.map((name) => (
           <Tag key={name}>

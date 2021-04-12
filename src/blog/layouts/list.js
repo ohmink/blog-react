@@ -4,13 +4,11 @@ import { JsList } from "../category/javascript/index";
 
 const ListContainer = styled.div`
   flex: 1;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: baseline;
-  margin-left: 10rem;
+  margin-left: 5rem;
   width: 500px;
-  heigth: 500px;
+  height: 100%;
 `;
 
 export const List = (props) => {
@@ -20,7 +18,7 @@ export const List = (props) => {
         <JsList />
       ) : (
         <div>
-          <h1>글이 존재하지 않습니다!</h1>
+          <p>글이 존재하지 않습니다!</p>
         </div>
       )}
     </ListContainer>

@@ -1,7 +1,7 @@
-export const titleOfCopy = `Shallow copy vs. Deep copy 그리고 변경불가성(Immutability)`;
+import React from "react";
 
-export const postOfCopy = `
-# 
+export const copy = `
+# Shallow copy vs. Deep copy 그리고 변경불가성(Immutability)
 > 이 포스트는 모던 자바스크립트 Deep dive에 대한 블로그 https://poiemaweb.com
 를 공부하며 개인적으로 정리하려고 작성한 것입니다.
 
@@ -93,3 +93,12 @@ Object.assign
 - 불변객체화를 통한 객체 변경 방지
 Object.freeze
 `;
+
+export const CopyPost = ({ match }) => {
+  console.log(match.params.id);
+  return (
+    <div>
+      <h1>TEST</h1>
+    </div>
+  );
+};

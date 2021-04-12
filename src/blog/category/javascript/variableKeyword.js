@@ -1,9 +1,10 @@
 export const titleOfVariableKeyword = `JavaScript에서 변수를 선언하는 세 가지 방식`;
 
 export const variableKeyword = `
-> https://poiemaweb.com/es6-block-scope 을 토대로 공부한 내용을 정리한 것입니다.
+# JavaScript에서 변수를 선언하는 세 가지 방식
+>https://poiemaweb.com/es6-block-scope 을 토대로 공부한 내용을 정리한 것입니다.
 
-> 키워드 : 스코프, 호이스팅, TDZ
+>키워드 : 스코프, 호이스팅, TDZ
 
 ## var? let? const?
 var 키워드는 ES5까지 사용하던 방법이다.

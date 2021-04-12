@@ -4,6 +4,7 @@ import { Header } from "./public/header";
 import { MainPage } from "./main/mainPage";
 import { ProfilePage } from "./profile/profilePage";
 import { BlogPage } from "./blog/blogPage";
+import { Post } from "./blog/category/javascript/post";
 
 function App() {
   return (

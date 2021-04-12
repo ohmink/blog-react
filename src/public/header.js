@@ -40,7 +40,7 @@ const ButtonContainer = styled.div`
 
 const images = [Home, User, Project, Flag];
 const names = ["Home", "About", "Project", "Blog"];
-const links = ["/", "/about", "/project", "/blog/javascript"];
+const links = ["/", "/about", "/project", "/blog/codingtest"];
 
 export const Header = () => {
   useEffect(() => {
