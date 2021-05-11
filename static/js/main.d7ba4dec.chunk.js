@@ -1,2 +1,0 @@
-(this["webpackJsonpohmink.github.io"]=this["webpackJsonpohmink.github.io"]||[]).push([[0],{13:function(n,t,e){},17:function(n,t,e){},24:function(n,t,e){"use strict";e.r(t);e(0),e(13);var i=e(9),c=e.n(i),o=e(11),s=(e(17),e(3));var r=function(){return Object(s.jsx)("div",{className:"App",children:"\ud3ed\ud30c!"})};c.a.render(Object(s.jsx)(o.a,{children:Object(s.jsx)(r,{})}),document.getElementById("root"))}},[[24,1,2]]]);
-//# sourceMappingURL=main.d7ba4dec.chunk.js.map
