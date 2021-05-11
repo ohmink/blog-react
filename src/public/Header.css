@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  flex-direction: row;
+
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header_title {
+  flex: 1;
+}
+
+.header_button_layout {
+  flex: 1.5;
+  align-items: center;
+
+  margin: auto;
+}
+.header_button {
+  margin-left: 1rem;
+
+  background-color: white;
+  border: none;
+
+  font-size: 1.5rem;
+}
