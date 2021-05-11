@@ -1,20 +1,8 @@
 import React from "react";
-import { Route } from "react-router-dom";
-import { Header } from "./public/header";
-import { MainPage } from "./main/mainPage";
-import { ProfilePage } from "./profile/profilePage";
-import { BlogPage } from "./blog/blogPage";
-import { Post } from "./blog/category/javascript/post";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Route path="/" exact={true} component={MainPage} />
-      <Route path="/profile" component={ProfilePage} />
-      <Route path="/blog" component={BlogPage} />
-    </div>
-  );
+  return <div className="App">폭파!</div>;
 }
 
 export default App;
