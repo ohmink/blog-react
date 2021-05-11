@@ -1,8 +1,20 @@
 import React from "react";
-import "./App.css";
+import { Header } from "./public/Header";
+import { Home } from "./templates/Home";
+import { About } from "./templates/About";
+import { Project } from "./templates/Project";
 
 function App() {
-  return <div className="App">폭파!</div>;
+  return (
+    <div className="App">
+      <Header />
+      <div className="templates">
+        <Home />
+        <About />
+        <Project />
+      </div>
+    </div>
+  );
 }
 
 export default App;
