@@ -6,7 +6,7 @@ export const Home = () => {
   return (
     <div className="home_template">
       <div className="home_profile_layout">
-        <img src="" width="100" height="100" />
+        <img src="" width="250" height="250" />
         <h2>권오민</h2>
         <h3>Junior developer</h3>
         <p>kkop5056@naver.com</p>
