@@ -6,6 +6,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url("./images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
 }
 
 .blog_tag {
@@ -31,4 +36,8 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: #24ccc3;
   border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0c4e4b;
 }
