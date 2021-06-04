@@ -10,8 +10,6 @@ function App() {
       <Header />
       <div className="templates">
         <Home />
-        <About />
-        <Project />
       </div>
     </div>
   );
