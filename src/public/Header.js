@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import "./Header.css";
 
 export const Header = () => {
-  const items = ["Home", "About", "Project"];
-  const link = ["Blog", "Github"];
-  const linkTarget = ["https://velog.io/@kasran1", "https://github.com/ohmink"];
+  const items = ["About", "Project", "Blog"];
+  const link = ["Github"];
+  const linkTarget = ["https://github.com/ohmink"];
 
   const openLink = (event) => {
     const id = event.target.id.replace(/[a-zA-Z_]+/g, "");
@@ -26,7 +26,7 @@ export const Header = () => {
 
   return (
     <div className="header">
-      <h3 className="header_title">MY Blog</h3>
+      <h3 className="header_title">My note</h3>
       <div className="header_button_layout">
         {items.map((item, idx) => (
           <button key={idx} className="header_button">
