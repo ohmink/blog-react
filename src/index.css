@@ -6,22 +6,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url("./images/background.png");
-  background-size: cover;
+  background: linear-gradient(
+    315deg,
+    #bcb7b4 5%,
+    rgba(0, 0, 0, 0) 5% 95%,
+    #d6d2d1 95%
+  );
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: white;
+  overflow: hidden;
 }
 
 .blog_tag {
   text-decoration: none;
-  color: white;
   margin: 1rem 0;
 }
 
 .blog_post_button {
   text-decoration: none;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,10 +36,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #24ccc3;
+  background-color: #808fac;
   border-radius: 15px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #0c4e4b;
+  background-color: #c4c4ce;
 }
