@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Header.css";
 
 export const Header = () => {
@@ -10,19 +10,6 @@ export const Header = () => {
     const id = event.target.id.replace(/[a-zA-Z_]+/g, "");
     window.open(linkTarget[id]);
   };
-
-  useEffect(() => {
-    const target = [
-      document.querySelector(".home_template"),
-      document.querySelector(".about"),
-      document.querySelector(".project"),
-    ];
-
-    const buttons = document.querySelectorAll(".header_button");
-    buttons.forEach((button, i) => {
-      button.addEventListener("click", () => target[i].scrollIntoView(true));
-    });
-  }, []);
 
   return (
     <div className="header">
