@@ -1,8 +1,6 @@
 import React from "react";
 import { Header } from "./public/Header";
 import { Home } from "./templates/Home";
-import { About } from "./templates/About";
-import { Project } from "./templates/Project";
 
 function App() {
   return (
