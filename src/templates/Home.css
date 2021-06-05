@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: row;
 
-  background: linear-gradient(315deg, #616e9a, #a4afcf);
+  background: linear-gradient(315deg, #c9d9ff, #616e9a, #a1a1c1);
   width: 50%;
   height: 100%;
   margin: 0 auto;
@@ -67,6 +67,10 @@
   border-left-width: 1px;
   border-left-color: black;
   border-left-style: solid;
+}
+
+.book_contents_right_text_container h3 {
+  margin: 5px;
 }
 
 .book_contents_left {
