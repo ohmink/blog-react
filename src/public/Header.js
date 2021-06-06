@@ -3,12 +3,10 @@ import "./Header.css";
 
 export const Header = () => {
   const items = ["About", "Project", "Blog"];
-  const link = ["Github"];
-  const linkTarget = ["https://github.com/ohmink"];
+  const githubLinkt = "https://github.com/ohmink";
 
-  const openLink = (event) => {
-    const id = event.target.id.replace(/[a-zA-Z_]+/g, "");
-    window.open(linkTarget[id]);
+  const openLink = () => {
+    window.open(githubLinkt);
   };
 
   return (
@@ -20,17 +18,14 @@ export const Header = () => {
             {item}
           </button>
         ))}
-        {link.map((item, idx) => (
-          <button
-            key={idx}
-            className="header_link"
-            id={`header_link${idx}`}
-            type="button"
-            onClick={openLink}
-          >
-            {item}
-          </button>
-        ))}
+        <button
+          className="header_button"
+          id={`github_link`}
+          type="button"
+          onClick={openLink}
+        >
+          Github
+        </button>
       </div>
     </div>
   );
