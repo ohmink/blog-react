@@ -1,34 +1,20 @@
 body {
   margin: 0;
-  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(
-    315deg,
+    135deg,
     #bcb7b4 5%,
     rgba(0, 0, 0, 0) 5% 95%,
     #d6d2d1 95%
   );
   background-repeat: no-repeat;
   background-attachment: fixed;
+
   overflow: hidden;
-}
-
-.blog_tag {
-  text-decoration: none;
-  margin: 1rem 0;
-}
-
-.blog_post_button {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: baseline;
-  margin: 0;
 }
 
 ::-webkit-scrollbar {
