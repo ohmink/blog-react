@@ -23,7 +23,7 @@
   border-top-width: 5px;
   border-top-style: double;
 
-  box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .book_left_shadow {
