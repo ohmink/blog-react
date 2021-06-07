@@ -1,0 +1,9 @@
+.posts_list_box {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: 150px;
+
+  margin: 15px auto;
+  background-color: antiquewhite;
+}
