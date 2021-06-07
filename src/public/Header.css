@@ -24,6 +24,12 @@
   margin-right: 0;
 }
 
+.header_title:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: darkblue;
+}
+
 .header_button {
   display: flex;
   flex-direction: row;
