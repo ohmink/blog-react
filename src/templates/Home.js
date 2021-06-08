@@ -12,29 +12,33 @@ export const Home = () => {
             <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oh-Min</h2>
           </div>
           <div className="book_contents_right">
-            <div className="book_contents_right_text_container">
-              <h3>오</h3>
-              <h3>신</h3>
-              <br />
-              <h3>것</h3>
-              <h3>을</h3>
-              <br />
-              <h3>환</h3>
-              <h3>영</h3>
-              <h3>합</h3>
-              <h3>니</h3>
-              <h3>다</h3>
-              <h3>.</h3>
-            </div>
-            <div className="book_contents_right_text_container">
-              <h3>저</h3>
-              <h3>의</h3>
-              <br />
-              <h3>다</h3>
-              <h3>이</h3>
-              <h3>어</h3>
-              <h3>리</h3>
-              <h3>에</h3>
+            <div className="book_expression_container">
+              <div className="book_expression">
+                <p>일</p>
+                <p>깨</p>
+                <p>우</p>
+                <p>는</p>
+              </div>
+              <div className="book_expression">
+                <p>알</p>
+                <p>게</p>
+                <br />
+                <p>하</p>
+                <p>고</p>
+              </div>
+              <div className="book_expression">
+                <p>기</p>
+                <p>록</p>
+                <p>하</p>
+                <p>고</p>
+              </div>
+              <div className="book_expression">
+                <p>나</p>
+                <p>를</p>
+                <br />
+                <p>위</p>
+                <p>해</p>
+              </div>
             </div>
           </div>
         </div>

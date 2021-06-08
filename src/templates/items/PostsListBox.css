@@ -1,9 +1,41 @@
 .posts_list_box {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
   width: 95%;
-  height: 150px;
+  height: 200px;
 
   margin: 15px auto;
-  background-color: antiquewhite;
+
+  border-bottom: 2px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+}
+
+.posts_list_box h3 {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.posts_summary {
+  flex: 3;
+}
+
+.posts_list_box div {
+  flex: 0.5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+
+  width: max-content;
+}
+
+.posts_list_box div span {
+  margin-right: 10px;
+}
+
+.posts_updated_time {
+  flex: 0.5;
 }

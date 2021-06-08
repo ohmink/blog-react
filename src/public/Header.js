@@ -1,16 +1,11 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
-  const items = ["About", "Project", "Blog", "Github"];
-  const githubLinkt = "https://github.com/ohmink";
+  const items = ["About", "Project", "Blog"];
 
-  const openLink = (event) => {
-    const buttonId = +event.target.id.match(/\d/i)[0];
-    buttonId === 3
-      ? window.open(githubLinkt)
-      : (window.location.href = `/${items[buttonId]}`);
-  };
+  const openGithub = () => window.open("https://github.com/ohmink");
   const openHome = () => (window.location.href = "/");
 
   return (
@@ -20,16 +15,17 @@ export const Header = () => {
       </h3>
       <div className="header_button_layout">
         {items.map((item, idx) => (
-          <button
+          <Link
             key={idx}
             className="header_button"
-            id={`header_button${idx}`}
-            type="button"
-            onClick={openLink}
+            to={`/${item.toLowerCase()}`}
           >
             {item}
-          </button>
+          </Link>
         ))}
+        <button className="header_button" onClick={openGithub}>
+          Github
+        </button>
       </div>
     </div>
   );
