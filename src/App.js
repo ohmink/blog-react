@@ -6,6 +6,7 @@ import { Home } from "./templates/Home";
 import { About } from "./templates/About";
 import { Project } from "./templates/Project";
 import { Blog } from "./templates/Blog";
+import { NewBlog } from "./templates/NewBlog";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/project" component={Project} />
         <Route path="/blog" component={Blog} />
+        <Route path="/new" component={NewBlog} />
       </div>
     </div>
   );
