@@ -4,16 +4,18 @@
   justify-content: center;
 
   width: 95%;
-  height: 200px;
+  height: fit-content;
 
   margin: 15px auto;
 
   border-bottom: 2px;
   border-bottom-color: black;
   border-bottom-style: solid;
+
+  word-break: break-all;
 }
 
-.posts_list_box h3 {
+.posts_list_box h2 {
   flex: 1;
   margin-bottom: 0;
 }
@@ -38,4 +40,6 @@
 
 .posts_updated_time {
   flex: 0.5;
+  color: gray;
+  font-weight: lighter;
 }
