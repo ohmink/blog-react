@@ -1,11 +1,9 @@
 import React from "react";
 import "./NewBlog.css";
-import { create } from "../utils/BlogApi";
+import { create } from "../utils/PostsApi";
 
 export const NewBlog = () => {
-  const createPosts = (e) => {
-    create({ title: "test", tag: "react", contents: "아 좀 되라." });
-  };
+  const createPosts = (e) => {};
   return (
     <div className="new_blog_template">
       <form>
