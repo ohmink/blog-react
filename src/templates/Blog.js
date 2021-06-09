@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Blog.css";
-import { getAll } from "../utils/BlogApi";
+import { getAll } from "../utils/PostsApi";
 import { PostsListBox } from "./items/PostsListBox";
 import { Link } from "react-router-dom";
 
 export const Blog = () => {
   const [tags, setTags] = useState(null);
   const [tagCount, setTagCount] = useState(null);
+  const [totalCount, setTotalCount] = useState(0);
   const [postsData, setPostsData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -16,14 +17,16 @@ export const Blog = () => {
       setTags(null);
       setTagCount(null);
       setPostsData(null);
+      setTotalCount(0);
 
       const res = await getAll();
       const tagArray = [];
       const countMap = [];
-      console.log(res);
+      let total = 0;
 
       res.forEach((r, i) => {
         if (r.tag && r.tag.includes(" ")) {
+          total++;
           const tags = r.tag.split(" ");
           tags.forEach((tag) => {
             if (tagArray.includes(tag)) {
@@ -39,6 +42,7 @@ export const Blog = () => {
       setPostsData(res);
       setTags(tagArray);
       setTagCount(countMap);
+      setTotalCount(total);
       setLoading(false);
     };
 
@@ -46,16 +50,17 @@ export const Blog = () => {
   }, []);
 
   if (loading) return <div>loading...</div>;
-
   return (
     <div className="opened_book">
       <div className="opened_book_left">
         <div className="tags_container">
           <h3>태그 목록</h3>
+          <hr />
+          <button className="tag_button">전체보기({totalCount})</button>
           {tags.map((tag, idx) => (
-            <p key={idx}>
+            <button key={idx} className="tag_button">
               {tag}({tagCount[tag]})
-            </p>
+            </button>
           ))}
         </div>
       </div>
