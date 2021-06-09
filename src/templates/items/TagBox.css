@@ -2,5 +2,8 @@
   width: fit-content;
   height: fit-content;
   border-radius: 10px;
-  background-color: aquamarine;
+  color: white;
+  font-weight: bold;
+  font-size: smaller;
+  padding: 5px 10px;
 }
