@@ -14,16 +14,13 @@ const getTagList = () => {};
 const getDetail = () => {};
 
 export const create = async (posts) => {
-  console.log(posts);
   try {
     const response = await axios.post(
       "http://localhost:3001/posts/create",
       posts
     );
-    console.log(response);
     return response;
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
