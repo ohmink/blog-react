@@ -1,5 +1,9 @@
 export const getPostSummary = (contents) =>
-  contents.split("\n").slice(0, 3).join(" ").substring(0, 200);
+  contents
+    .substring(0, 1000)
+    .replace(/\([^)]+\)/g, "")
+    .replace(/[#*-`]/g, "")
+    .substring(0, 195) + ".....";
 
 export const getUpdateTime = (updateTime) => {
   const time = new Date(updateTime);
@@ -20,4 +24,30 @@ export const getUpdateTime = (updateTime) => {
   if (minute < 10) minute = `0${minute}`;
 
   return `${year}-${month}-${day} ${hour}:${minute}`;
+};
+
+export const getTagList = (resData) => {
+  const tagArray = [];
+  const countMap = [];
+  let total = 0;
+
+  resData.forEach((r) => {
+    if (r.tag && r.tag.includes(" ")) {
+      total++;
+      const tags = r.tag.split(" ");
+      tags.forEach((tag) => {
+        if (tagArray.includes(tag)) {
+          countMap[tag]++;
+        } else {
+          tagArray.push(tag);
+          countMap[tag] = 1;
+        }
+      });
+    }
+  });
+
+  tagArray.splice(0, 0, "전체보기");
+  countMap[tagArray[0]] = total;
+
+  return [tagArray, countMap];
 };

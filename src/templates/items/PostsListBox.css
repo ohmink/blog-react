@@ -18,6 +18,7 @@
 .posts_list_box h2 {
   flex: 1;
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 .posts_summary {

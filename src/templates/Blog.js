@@ -3,13 +3,24 @@ import "./Blog.css";
 import { getAll } from "../utils/PostsApi";
 import { PostsListBox } from "./items/PostsListBox";
 import { Link } from "react-router-dom";
+import { getTagList } from "../utils/PostsHelper";
 
 export const Blog = () => {
   const [tags, setTags] = useState(null);
   const [tagCount, setTagCount] = useState(null);
-  const [totalCount, setTotalCount] = useState(0);
+  const [originData, setOriginData] = useState(null);
   const [postsData, setPostsData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const tagButtonClicked = (e) => {
+    const tagName = e.target.id;
+    const selected =
+      tagName === "전체보기"
+        ? originData
+        : originData.filter((data) => String(data.tag).includes(tagName));
+
+    setPostsData(selected);
+  };
 
   useEffect(() => {
     const getPostsData = async () => {
@@ -17,32 +28,15 @@ export const Blog = () => {
       setTags(null);
       setTagCount(null);
       setPostsData(null);
-      setTotalCount(0);
+      setOriginData(null);
 
       const res = await getAll();
-      const tagArray = [];
-      const countMap = [];
-      let total = 0;
+      const [tagArray, countMap] = getTagList(res);
 
-      res.forEach((r, i) => {
-        if (r.tag && r.tag.includes(" ")) {
-          total++;
-          const tags = r.tag.split(" ");
-          tags.forEach((tag) => {
-            if (tagArray.includes(tag)) {
-              countMap[tag]++;
-            } else {
-              tagArray.push(tag);
-              countMap[tag] = 1;
-            }
-          });
-        }
-      });
-
+      setOriginData(res);
       setPostsData(res);
       setTags(tagArray);
       setTagCount(countMap);
-      setTotalCount(total);
       setLoading(false);
     };
 
@@ -56,9 +50,13 @@ export const Blog = () => {
         <div className="tags_container">
           <h3>태그 목록</h3>
           <hr />
-          <button className="tag_button">전체보기({totalCount})</button>
           {tags.map((tag, idx) => (
-            <button key={idx} className="tag_button">
+            <button
+              key={idx}
+              className="tag_button"
+              id={tag}
+              onClick={tagButtonClicked}
+            >
               {tag}({tagCount[tag]})
             </button>
           ))}
