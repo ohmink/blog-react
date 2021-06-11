@@ -1,4 +1,4 @@
-.opened_book {
+.blog_template {
   display: flex;
   flex-direction: row;
 
@@ -6,20 +6,6 @@
   height: 700px;
 
   overflow: auto;
-}
-
-.opened_book_left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 25%;
-  height: 100%;
-
-  border-radius: 5px;
-  border-width: 5px;
-  border-color: lightgray;
-  border-top-style: double;
 }
 
 .tags_container {
@@ -51,14 +37,4 @@
   cursor: pointer;
   font-weight: bold;
   color: darkslateblue;
-}
-
-.opened_book_right {
-  width: 50%;
-  height: 100%;
-
-  border-radius: 5px;
-  border-width: 5px;
-  border-color: lightgray;
-  border-style: double;
 }
