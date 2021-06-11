@@ -1,10 +1,24 @@
 import React from "react";
 import "./Home.css";
+import { BookRight } from "../public/Book";
 
 export const Home = () => {
+  const bookRightStyles = {
+    primary: true,
+    display: "flex",
+    flexDirection: "row",
+    margin: "0 auto",
+    backgroundImage: "/book_background.png",
+    backgroundColor: "#616e9a",
+    backgroundSize: "auto",
+    borderLeft: "none",
+    borderBottom: "none",
+    boxShadow: "5px -5px 20px rgba(0, 0, 0, 0.5)",
+  };
+
   return (
     <div className="home_template">
-      <div className="book_layout">
+      <BookRight {...bookRightStyles}>
         <div className="book_left_shadow"></div>
         <div className="book_contents">
           <div className="book_contents_left">
@@ -42,7 +56,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </BookRight>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Blog.css";
+import { BookRight, BookLeft } from "../public/Book";
 import { getAll } from "../utils/PostsApi";
 import { PostsListBox } from "./items/PostsListBox";
 import { Link } from "react-router-dom";
@@ -13,6 +14,7 @@ export const Blog = () => {
   const [loading, setLoading] = useState(true);
 
   const tagButtonClicked = (e) => {
+    console.log("test");
     const tagName = e.target.id;
     const selected =
       tagName === "전체보기"
@@ -44,9 +46,10 @@ export const Blog = () => {
   }, []);
 
   if (loading) return <div>loading...</div>;
+
   return (
-    <div className="opened_book">
-      <div className="opened_book_left">
+    <div className="blog_template">
+      <BookLeft>
         <div className="tags_container">
           <h3>태그 목록</h3>
           <hr />
@@ -61,13 +64,14 @@ export const Blog = () => {
             </button>
           ))}
         </div>
-      </div>
-      <div className="opened_book_right">
+      </BookLeft>
+      <BookRight>
         {postsData.map((data) => {
           if (data.tag && data.contents)
             return (
               <PostsListBox
                 key={data._id}
+                id={data._id}
                 title={data.title}
                 tags={data.tag}
                 contents={data.contents}
@@ -75,9 +79,9 @@ export const Blog = () => {
               />
             );
         })}
-      </div>
+      </BookRight>
       <div className="blog_service_container">
-        <Link to="/new">글쓰기</Link>
+        <Link to="/blog/new">글쓰기</Link>
       </div>
     </div>
   );

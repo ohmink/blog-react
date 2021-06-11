@@ -7,6 +7,7 @@ import { About } from "./templates/About";
 import { Project } from "./templates/Project";
 import { Blog } from "./templates/Blog";
 import { NewBlog } from "./templates/NewBlog";
+import { Posts } from "./templates/Posts";
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
         <Route path="/" exact={true} component={Home} />
         <Route path="/about" component={About} />
         <Route path="/project" component={Project} />
-        <Route path="/blog" component={Blog} />
-        <Route path="/new" component={NewBlog} />
+        <Route path="/blog" exact component={Blog} />
+        <Route path="/blog/new" exact component={NewBlog} />
+        <Route path="/blog/detail/:postsId" exact component={Posts} />
       </div>
     </div>
   );

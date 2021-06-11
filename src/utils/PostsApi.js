@@ -11,7 +11,16 @@ export const getAll = async () => {
 
 const getTagList = () => {};
 
-const getDetail = () => {};
+export const getDetail = async (postsId) => {
+  try {
+    const answer = await axios.get(
+      `http://localhost:3001/posts/getDetail/${postsId}`
+    );
+    return answer.data;
+  } catch (error) {
+    return error;
+  }
+};
 
 export const create = async (posts) => {
   try {

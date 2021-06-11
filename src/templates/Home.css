@@ -6,29 +6,6 @@
   height: 700px;
 }
 
-.book_layout {
-  display: flex;
-  flex-direction: row;
-
-  /* background: linear-gradient(315deg, #c9d9ff, #616e9a, #a1a1c1); */
-  background-image: url(../book_background.png);
-  background-color: #616e9a;
-  background-size: auto;
-  width: 50%;
-  height: 100%;
-  margin: 0 auto;
-
-  border-radius: 5px;
-  border-right-color: lightgray;
-  border-right-width: 5px;
-  border-right-style: double;
-  border-top-color: lightgray;
-  border-top-width: 5px;
-  border-top-style: double;
-
-  box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.5);
-}
-
 .book_left_shadow {
   width: 40px;
   height: 100%;
