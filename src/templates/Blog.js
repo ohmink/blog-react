@@ -80,9 +80,6 @@ export const Blog = () => {
             );
         })}
       </BookRight>
-      <div className="blog_service_container">
-        <Link to="/blog/new">글쓰기</Link>
-      </div>
     </div>
   );
 };

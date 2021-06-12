@@ -1,28 +1,55 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import "./Posts.css";
 import { BookLeft, BookRight } from "../public/Book";
 import { TagBox } from "./items/TagBox";
+import { CirCleButton } from "./items/CircleButton";
 import { getDetail } from "../utils/PostsApi";
 import { getUpdateTime } from "../utils/PostsHelper";
+import { MarkdownContents } from "../utils/MarkdownParser";
+
+const components = {
+  code({ node, inline, className, children, ...props }) {
+    const match = /language-(\w+)/.exec(className || "");
+    return !inline && match ? (
+      <SyntaxHighlighter
+        style={docco}
+        language={match[1]}
+        PreTag="div"
+        children={String(children).replace(/\n$/, "")}
+        {...props}
+      />
+    ) : (
+      <code className={className} {...props} />
+    );
+  },
+};
 
 export const Posts = ({ match }) => {
   const [loading, setLoading] = useState(true);
   const [detailData, setDetailData] = useState(null);
   const [tags, setTags] = useState(null);
+  const [content, setContent] = useState(null);
 
   useEffect(() => {
     const getDetailPosts = async () => {
       setLoading(true);
       setDetailData(null);
       setTags(null);
+      setContent(null);
 
       const postsId = match.params.postsId;
       const data = await getDetail(postsId);
+      const postsContent = data.contents
+        .replaceAll("    ", "")
+        .replaceAll(">", "");
 
       setDetailData(data);
       setTags(data.tag.split(" "));
+      setContent(postsContent);
       setLoading(false);
     };
 
@@ -30,10 +57,15 @@ export const Posts = ({ match }) => {
   }, []);
 
   if (loading) return <div>로딩 중</div>;
-  console.log(detailData);
+
   return (
     <div className="posts_detail_template">
-      <BookLeft>목차</BookLeft>
+      <BookLeft>
+        <MarkdownContents
+          postsContent={content}
+          className="markdown_contents"
+        />
+      </BookLeft>
       <BookRight
         primary={true}
         display="flex"
@@ -53,21 +85,34 @@ export const Posts = ({ match }) => {
             {getUpdateTime(detailData.updatedAt)}
           </div>
         </div>
-        <div className="posts_detail_content">
-          <ReactMarkdown remarkPlugins={[gfm]}>
-            {detailData.contents}
-          </ReactMarkdown>
-        </div>
+        <ReactMarkdown
+          className="posts_detail_content"
+          components={components}
+          remarkPlugins={[gfm]}
+          children={content}
+        />
       </BookRight>
       <div className="posts_detail_utils">
         <div className="posts_detail_util_buttons">
-          <span>목록</span>
-          <span>하트</span>
-          <span>공유</span>
+          <CirCleButton
+            primary={true}
+            backgroundImage="/list.png"
+            backgroundColor="lightgray"
+          />
+          <CirCleButton primary={true} backgroundImage="/heart.png" />
+          <CirCleButton primary={true} backgroundImage="/share.png" />
         </div>
         <div className="posts_detail__util_updown">
-          <span>위로</span>
-          <span>아래로</span>
+          <CirCleButton
+            primary={true}
+            backgroundImage="/up.png"
+            backgroundColor="whitesmoke"
+          />
+          <CirCleButton
+            primary={true}
+            backgroundImage="/down.png"
+            backgroundColor="whitesmoke"
+          />
         </div>
       </div>
     </div>
