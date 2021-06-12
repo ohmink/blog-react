@@ -1,28 +1,26 @@
 import styled, { css } from "styled-components";
 
 export const BookLeft = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 25%;
+  width: 22%;
   height: 100%;
 
   border-radius: 5px;
   border-width: 5px;
   border-color: lightgray;
   border-top-style: double;
+
+  position: absolute;
 `;
 
 export const BookRight = styled.div`
-  width: 50%;
+  width: 56%;
   height: 100%;
 
   border-radius: 5px;
   border-width: 5px;
   border-style: double;
   border-color: lightgray;
-
+  margin: 0 auto;
   ${(props) =>
     props.primary &&
     css`
@@ -36,5 +34,5 @@ export const BookRight = styled.div`
       border-bottom: ${props.borderBottom};
       box-shadow: ${props.boxShadow};
       height: ${props.height};
-    `}
+    `};
 `;
