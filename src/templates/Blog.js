@@ -9,19 +9,27 @@ import { getTagList } from "../utils/PostsHelper";
 export const Blog = () => {
   const [tags, setTags] = useState(null);
   const [tagCount, setTagCount] = useState(null);
+  const [curTag, setCurTag] = useState(null);
   const [originData, setOriginData] = useState(null);
   const [postsData, setPostsData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const tagButtonClicked = (e) => {
-    console.log("test");
-    const tagName = e.target.id;
-    const selected =
-      tagName === "전체보기"
+    const selectedTag = e.target;
+    const selectedList =
+      selectedTag.id === "전체보기"
         ? originData
-        : originData.filter((data) => String(data.tag).includes(tagName));
+        : originData.filter((data) =>
+            String(data.tag).includes(selectedTag.id)
+          );
 
-    setPostsData(selected);
+    setPostsData(selectedList);
+
+    curTag.style.fontWeight = "normal";
+    curTag.style.color = "black";
+    selectedTag.style.fontWeight = "bold";
+    selectedTag.style.color = "lightseagreen";
+    setCurTag(selectedTag);
   };
 
   useEffect(() => {
@@ -40,6 +48,11 @@ export const Blog = () => {
       setTags(tagArray);
       setTagCount(countMap);
       setLoading(false);
+
+      const defaultTag = document.getElementById("전체보기");
+      defaultTag.style.fontWeight = "bold";
+      defaultTag.style.color = "lightseagreen";
+      setCurTag(defaultTag);
     };
 
     getPostsData();
