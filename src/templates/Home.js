@@ -8,7 +8,7 @@ export const Home = () => {
     display: "flex",
     flexDirection: "row",
     margin: "0 auto",
-    backgroundImage: "/book_background.png",
+    backgroundImage: "/images/book_background.png",
     backgroundColor: "#616e9a",
     backgroundSize: "auto",
     borderLeft: "none",

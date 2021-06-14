@@ -24,7 +24,6 @@ export const MarkdownContents = ({ postsContent, className }) => {
       poundCounts.push((divides.length - 1) * 10);
       return divides.pop();
     });
-  console.log(poundCounts);
 
   return (
     <div className={className}>
