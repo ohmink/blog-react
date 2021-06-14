@@ -34,6 +34,12 @@ export const Posts = ({ match }) => {
   const [tags, setTags] = useState(null);
   const [content, setContent] = useState(null);
 
+  const toTheTop = () => (document.documentElement.scrollTop = 0);
+
+  const toTheBottom = () =>
+    (document.documentElement.scrollTop =
+      document.documentElement.scrollHeight);
+
   useEffect(() => {
     const getDetailPosts = async () => {
       setLoading(true);
@@ -96,22 +102,24 @@ export const Posts = ({ match }) => {
         <div className="posts_detail_util_buttons">
           <CirCleButton
             primary={true}
-            backgroundImage="/list.png"
+            backgroundImage="/images/list.png"
             backgroundColor="lightgray"
           />
-          <CirCleButton primary={true} backgroundImage="/heart.png" />
-          <CirCleButton primary={true} backgroundImage="/share.png" />
+          <CirCleButton primary={true} backgroundImage="/images/heart.png" />
+          <CirCleButton primary={true} backgroundImage="/images/share.png" />
         </div>
         <div className="posts_detail__util_updown">
           <CirCleButton
             primary={true}
-            backgroundImage="/up.png"
+            backgroundImage="/images/up.png"
             backgroundColor="whitesmoke"
+            onClick={toTheTop}
           />
           <CirCleButton
             primary={true}
-            backgroundImage="/down.png"
+            backgroundImage="/images/down.png"
             backgroundColor="whitesmoke"
+            onClick={toTheBottom}
           />
         </div>
       </div>
