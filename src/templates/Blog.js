@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Blog.css";
-import { BookRight, BookLeft } from "../public/Book";
 import { getAll } from "../utils/PostsApi";
 import { PostsListBox } from "./items/PostsListBox";
-import { Link } from "react-router-dom";
 import { getTagList } from "../utils/PostsHelper";
 
 export const Blog = () => {
@@ -62,8 +60,8 @@ export const Blog = () => {
 
   return (
     <div className="blog_template">
-      <BookLeft>
-        <div className="tags_container">
+      <div className="tags_container">
+        <div>
           <h3>태그 목록</h3>
           <hr />
           {tags.map((tag, idx) => (
@@ -77,8 +75,8 @@ export const Blog = () => {
             </button>
           ))}
         </div>
-      </BookLeft>
-      <BookRight>
+      </div>
+      <div className="posts_container">
         {postsData.map((data) => {
           if (data.tag && data.contents)
             return (
@@ -92,7 +90,7 @@ export const Blog = () => {
               />
             );
         })}
-      </BookRight>
+      </div>
     </div>
   );
 };
