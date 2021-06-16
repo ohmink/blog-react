@@ -8,7 +8,7 @@ export const PostsListBox = ({ id, title, tags, contents, updatedAt }) => {
   const summary = getPostSummary(contents);
   const updateTime = getUpdateTime(updatedAt);
   const clickedBox = () => {
-    window.location.href = `http://localhost:3000/blog/detail/:${id}`;
+    window.location.href = `http://localhost:3000/post/:${id}`;
   };
 
   return (
