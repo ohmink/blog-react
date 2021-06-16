@@ -1,12 +1,24 @@
 .about_template {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  width: 60%;
-  height: 500px;
+  width: 87%;
+  height: 800px;
   margin: 0 auto;
+  margin-top: 150px;
+}
+
+.about_content_layout {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.about_code_record {
+  flex: 1;
 }
 
 .about_info_layout {
@@ -16,12 +28,18 @@
   flex-direction: column;
 
   height: 100%;
-
   background-color: antiquewhite;
 }
 
 .about_info_layout div {
   flex: 1;
+}
+
+.vertical_divider {
+  margin: 50px 50px;
+  width: 1px;
+  height: 30%;
+  background-color: lightgray;
 }
 
 .about_test_layout {
@@ -38,17 +56,32 @@
 
   display: flex;
   flex-direction: row;
+
+  border-radius: 10px;
+  border-color: aqua;
+  border-style: solid;
 }
 
 .about_test_modal {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: fit-content;
   position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 
   display: none;
+  overflow: auto;
 }
 
-.about_test_modal iframe {
+.about_test_modal img {
   margin: 0 auto;
-  width: 90%;
+  width: 50%;
+  height: auto;
+}
+
+.about_item_box {
+  width: 100px;
+  height: 100px;
 }

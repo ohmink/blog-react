@@ -4,12 +4,12 @@ import gfm from "remark-gfm";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import "./Posts.css";
-import { BookLeft, BookRight } from "../public/Book";
 import { TagBox } from "./items/TagBox";
 import { CirCleButton } from "./items/CircleButton";
 import { getDetail } from "../utils/PostsApi";
 import { getUpdateTime } from "../utils/PostsHelper";
 import { MarkdownContents } from "../utils/MarkdownParser";
+import urlProvider from "../utils/ImageProvider";
 
 const components = {
   code({ node, inline, className, children, ...props }) {
@@ -66,18 +66,13 @@ export const Posts = ({ match }) => {
 
   return (
     <div className="posts_detail_template">
-      <BookLeft>
+      <div className="markdown_contents_container">
         <MarkdownContents
           postsContent={content}
           className="markdown_contents"
         />
-      </BookLeft>
-      <BookRight
-        primary={true}
-        display="flex"
-        flexDirection="column"
-        height="fit-content"
-      >
+      </div>
+      <div className="posts_detail_container">
         <div className="posts_detail_title">
           <p>{detailData.title}</p>
         </div>
@@ -97,31 +92,40 @@ export const Posts = ({ match }) => {
           remarkPlugins={[gfm]}
           children={content}
         />
-      </BookRight>
-      <div className="posts_detail_utils">
-        <div className="posts_detail_util_buttons">
+      </div>
+      <div className="posts_detail_nav">
+        <CirCleButton
+          className="posts_detail_nav_button"
+          primary={true}
+          backgroundImage={urlProvider.nav.upImgUrl}
+          backgroundColor="whitesmoke"
+          onClick={toTheTop}
+        />
+        <div>
           <CirCleButton
+            className="posts_detail_nav_button"
             primary={true}
-            backgroundImage="/images/list.png"
+            backgroundImage={urlProvider.nav.listImgUrl}
             backgroundColor="lightgray"
           />
-          <CirCleButton primary={true} backgroundImage="/images/heart.png" />
-          <CirCleButton primary={true} backgroundImage="/images/share.png" />
-        </div>
-        <div className="posts_detail__util_updown">
           <CirCleButton
+            className="posts_detail_nav_button"
             primary={true}
-            backgroundImage="/images/up.png"
-            backgroundColor="whitesmoke"
-            onClick={toTheTop}
+            backgroundImage={urlProvider.nav.heartImgUrl}
           />
           <CirCleButton
+            className="posts_detail_nav_button"
             primary={true}
-            backgroundImage="/images/down.png"
-            backgroundColor="whitesmoke"
-            onClick={toTheBottom}
+            backgroundImage={urlProvider.nav.shareImgUrl}
           />
         </div>
+        <CirCleButton
+          className="posts_detail_nav_button"
+          primary={true}
+          backgroundImage={urlProvider.nav.downImgUrl}
+          backgroundColor="whitesmoke"
+          onClick={toTheBottom}
+        />
       </div>
     </div>
   );
