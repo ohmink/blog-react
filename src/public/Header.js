@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [prePage, setPrePage] = useState(null);
-  const items = ["About", "Project", "Blog"];
+  const items = ["About", "Project"];
 
   const openGithub = () => window.open("https://github.com/ohmink");
   const openHome = () => (window.location.href = "/");
@@ -24,7 +24,7 @@ export const Header = () => {
   return (
     <div className="header">
       <h3 className="header_title" onClick={openHome}>
-        My note
+        권오민의 서재
       </h3>
       <div className="header_button_layout">
         {items.map((item, idx) => (
