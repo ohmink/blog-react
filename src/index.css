@@ -5,6 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow: hidden;
+}
+
+.templates {
+  overflow: auto;
+  margin-top: 80px;
 }
 
 ::-webkit-scrollbar {
@@ -12,7 +19,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #808fac;
+  background-color: #5374b6;
   border-radius: 15px;
 }
 
