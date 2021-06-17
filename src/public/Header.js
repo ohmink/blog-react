@@ -12,11 +12,11 @@ export const Header = () => {
     const curPage = event.target;
 
     if (!prePage) {
-      curPage.style.backgroundColor = "lemonchiffon";
+      curPage.style.backgroundColor = "turquoise";
       setPrePage(curPage);
     } else if (prePage != curPage) {
       prePage.style.backgroundColor = "rgba(0,0,0,0)";
-      curPage.style.backgroundColor = "lemonchiffon";
+      curPage.style.backgroundColor = "turquoise";
       setPrePage(curPage);
     }
   };
