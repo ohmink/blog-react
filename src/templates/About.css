@@ -5,8 +5,8 @@
   align-items: center;
 
   width: 80%;
-  height: 800px;
-  margin: 150px auto;
+  height: fit-content;
+  margin: 100px auto;
   font-family: "Times New Roman", Times, serif;
 }
 
@@ -17,6 +17,18 @@
 
 .about_code_record {
   flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+.about_code_record img {
+  margin-top: 30px;
+  width: 80%;
 }
 
 .about_tech_layout {
@@ -94,6 +106,9 @@
 
 .about_test_container div:hover {
   cursor: pointer;
+  background-color: cornflowerblue;
+  color: white;
+  font-weight: bold;
 }
 
 #mind_test {
@@ -107,6 +122,7 @@
 
 .about_test_container div p {
   font-family: initial;
+  font-weight: bold;
 }
 
 .about_test_modal {

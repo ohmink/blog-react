@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "./Blog.css";
+import { Login } from "./Login";
 import { getAll } from "../utils/PostsApi";
 import { PostsListBox } from "./items/PostsListBox";
 import { getTagList } from "../utils/PostsHelper";
+import urlProvider from "../utils/ImageProvider";
 
-export const Blog = () => {
+export const Blog = ({ history }) => {
   const [tags, setTags] = useState(null);
   const [tagCount, setTagCount] = useState(null);
   const [curTag, setCurTag] = useState(null);
   const [originData, setOriginData] = useState(null);
   const [postsData, setPostsData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const openLogin = () => {
+    alert("관리자 기능입니다.");
+    const loginTemplate = document.querySelector(".login_template");
+    loginTemplate.style.display = "flex";
+  };
 
   const tagButtonClicked = (e) => {
     const selectedTag = e.target;
@@ -90,6 +98,10 @@ export const Blog = () => {
               />
             );
         })}
+      </div>
+      <div>
+        <img className="set_img" onClick={openLogin} src={urlProvider.set} />
+        <Login history={history} />
       </div>
     </div>
   );
