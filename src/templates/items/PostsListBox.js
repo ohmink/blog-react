@@ -3,12 +3,19 @@ import "./PostsListBox.css";
 import { TagBox } from "./TagBox";
 import { getPostSummary, getUpdateTime } from "../../utils/PostsHelper";
 
-export const PostsListBox = ({ id, title, tags, contents, updatedAt }) => {
+export const PostsListBox = ({
+  id,
+  title,
+  tags,
+  contents,
+  updatedAt,
+  history,
+}) => {
   const tagArray = tags.split(" ");
   const summary = getPostSummary(contents);
   const updateTime = getUpdateTime(updatedAt);
   const clickedBox = () => {
-    window.location.href = `http://localhost:3000/post/:${id}`;
+    history.push(`/post/:${id}`);
   };
 
   return (
