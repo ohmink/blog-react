@@ -41,7 +41,7 @@ export const getDetail = async (postsId) => {
 export const create = async (data) => {
   try {
     const response = await axios.post(
-      "http://localhost:3001/posts/create",
+      "https://ohmink-blog-server.herokuapp.com/posts/create",
       data
     );
 
