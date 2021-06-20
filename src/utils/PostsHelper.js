@@ -32,8 +32,9 @@ export const getTagList = (resData) => {
   let total = 0;
 
   resData.forEach((r) => {
-    if (r.tag && r.tag.includes(" ")) {
+    if (r.tag) {
       total++;
+
       const tags = r.tag.split(" ");
       tags.forEach((tag) => {
         if (tagArray.includes(tag)) {

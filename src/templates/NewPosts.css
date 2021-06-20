@@ -1,0 +1,19 @@
+.new_blog_template {
+  width: 60%;
+  height: fit-content;
+  margin: 150px auto;
+}
+
+.new_blog_template input {
+  width: 50%;
+  height: 30px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+}
+
+.new_blog_template textarea {
+  width: 100%;
+  height: 300px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+}

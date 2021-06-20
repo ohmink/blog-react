@@ -41,7 +41,7 @@ export const About = () => {
         <div className="about_tech_container">
           <div>
             <h1 className="about_tech_name">Skills</h1>
-            <h1>&nbsp;i use</h1>
+            <h1>&nbsp;I Use</h1>
           </div>
           <div className="logos_container">
             {urlProvider.skills.map((url, idx) => (
@@ -52,7 +52,7 @@ export const About = () => {
         <div className="about_tech_container">
           <div>
             <h1 className="about_tech_name">Tools</h1>
-            <h1>&nbsp;i use</h1>
+            <h1>&nbsp;I Use</h1>
           </div>
           <div className="logos_container">
             {urlProvider.tools.map((url, idx) => (
@@ -65,7 +65,7 @@ export const About = () => {
       <div className="about_test_layout">
         <div className="about_test_title">
           <h1 className="about_tech_name">Test</h1>
-          <h1>&nbsp;about me</h1>
+          <h1>&nbsp;About Me</h1>
         </div>
         <div className="about_test_container">
           <div onClick={clickButton} id="personality_test">
@@ -87,7 +87,13 @@ export const About = () => {
           <img key={url} src={url} />
         ))}
       </div>
-      {/* <div className="about_code_record">my code</div> */}
+      <div className="about_code_record">
+        <div className="about_test_title">
+          <h1>Days I</h1>
+          <h1 className="about_tech_name">&nbsp;Code</h1>
+        </div>
+        <img src="https://ghchart.rshah.org/green/ohmink" />
+      </div>
     </div>
   );
 };
