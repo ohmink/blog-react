@@ -95,6 +95,7 @@ export const Blog = ({ history }) => {
                 tags={data.tag}
                 contents={data.contents}
                 updatedAt={data.updatedAt}
+                history={history}
               />
             );
         })}
