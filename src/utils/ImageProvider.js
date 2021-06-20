@@ -42,6 +42,7 @@ const urlProvider = {
       "https://user-images.githubusercontent.com/45379812/122382571-01b31880-cfa5-11eb-8e76-850468537139.png",
     mind: "https://user-images.githubusercontent.com/45379812/122382573-02e44580-cfa5-11eb-9ee9-3bdbbc955dab.png",
   },
+  set: "https://user-images.githubusercontent.com/45379812/122635280-ecadc500-d11d-11eb-9bae-fbe2fe50e681.png",
 };
 
 export default urlProvider;
