@@ -4,6 +4,8 @@ import gfm from "remark-gfm";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import "./Posts.css";
+
+import { Loading } from "./Loading";
 import { TagBox } from "./items/TagBox";
 import { CirCleButton } from "./items/CircleButton";
 import { getDetail } from "../utils/PostsApi";
@@ -62,7 +64,7 @@ export const Posts = ({ match }) => {
     getDetailPosts();
   }, []);
 
-  if (loading) return <div>로딩 중</div>;
+  if (loading) return <Loading />;
 
   return (
     <div className="posts_detail_template">
