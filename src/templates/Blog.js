@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Blog.css";
 import { Login } from "./Login";
+import { Loading } from "./Loading";
 import { getAll } from "../utils/PostsApi";
 import { PostsListBox } from "./items/PostsListBox";
 import { getTagList } from "../utils/PostsHelper";
@@ -56,15 +57,17 @@ export const Blog = ({ history }) => {
       setLoading(false);
 
       const defaultTag = document.getElementById("전체보기");
-      defaultTag.style.fontWeight = "bold";
-      defaultTag.style.color = "lightseagreen";
-      setCurTag(defaultTag);
+      if (defaultTag) {
+        defaultTag.style.fontWeight = "bold";
+        defaultTag.style.color = "lightseagreen";
+        setCurTag(defaultTag);
+      }
     };
 
     getPostsData();
   }, []);
 
-  if (loading) return <div>loading...</div>;
+  if (loading) return <Loading />;
 
   return (
     <div className="blog_template">
