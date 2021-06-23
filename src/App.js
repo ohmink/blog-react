@@ -1,11 +1,11 @@
 import React from "react";
 import { Route } from "react-router";
-import { Header } from "./public/Header";
-import { About } from "./templates/About";
-import { Project } from "./templates/Project";
-import { Blog } from "./templates/Blog";
-import { NewPosts } from "./templates/NewPosts";
-import { Posts } from "./templates/Posts";
+import { Header } from "./common/Header";
+import { About } from "./pages/About";
+import { Project } from "./pages/Project";
+import { Blog } from "./pages/Blog";
+import { NewPosts } from "./pages/NewPosts";
+import { Posts } from "./pages/Posts";
 
 function App() {
   return (

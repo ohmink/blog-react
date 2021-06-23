@@ -1,5 +1,5 @@
 import React from "react";
-import "./NewPosts.css";
+import "./styles/NewPosts.css";
 import { create } from "../utils/PostsApi";
 
 export const NewPosts = () => {

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Loading.css";
+import "./styles/Loading.css";
 
 export const Loading = () => {
   useEffect(() => {

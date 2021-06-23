@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./About.css";
+import "./styles/About.css";
 import urlProvider from "../utils/ImageProvider";
 import { AboutBox } from "./items/AboutBox";
 

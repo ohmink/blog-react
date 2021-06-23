@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProjectBox.css";
+import "./styles/ProjectBox.css";
 
 export const ProjectBox = ({ title, period, content }) => {
   return (
