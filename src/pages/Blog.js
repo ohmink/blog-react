@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./Blog.css";
-import { Login } from "./Login";
+import "./styles/Blog.css";
+
+import { Login } from "./items/Login";
+import { PostsListBox } from "./items/PostsListBox";
 import { Loading } from "./Loading";
 import { getAll } from "../utils/PostsApi";
-import { PostsListBox } from "./items/PostsListBox";
 import { getTagList } from "../utils/PostsHelper";
 import urlProvider from "../utils/ImageProvider";
 

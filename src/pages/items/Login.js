@@ -1,9 +1,8 @@
 import React from "react";
-import "./Login.css";
-import { login } from "../utils/PostsApi";
+import "./styles/Login.css";
+import { login } from "../../utils/PostsApi";
 
 export const Login = ({ history }) => {
-  console.log(history);
   const closeLogin = () => {
     const loginTemplate = document.querySelector(".login_template");
     loginTemplate.style.display = "none";

@@ -1,5 +1,5 @@
 import React from "react";
-import "./PostsListBox.css";
+import "./styles/PostsListBox.css";
 import { TagBox } from "./TagBox";
 import { getPostSummary, getUpdateTime } from "../../utils/PostsHelper";
 

@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import "./Posts.css";
+import "./styles/Posts.css";
 
 import { Loading } from "./Loading";
 import { TagBox } from "./items/TagBox";
