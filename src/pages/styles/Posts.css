@@ -60,6 +60,44 @@
   flex: 2;
   margin: 30px 30px;
   word-break: break-all;
+  font: 1.2em caption;
+  line-height: 1.7;
+}
+
+.posts_detail_content blockquote {
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 1rem;
+  border-left: 5px solid lightcoral;
+}
+
+.posts_detail_content pre {
+  font-size: 0.9rem;
+  font-family: inherit;
+  line-height: inherit;
+
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  overflow-x: auto;
+}
+
+.posts_detail_content table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: keep-all;
+  border-spacing: 0;
+}
+
+.posts_detail_content table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.posts_detail_content table th,
+.posts_detail_content table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
 }
 
 .posts_detail_nav {

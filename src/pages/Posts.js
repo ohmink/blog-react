@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
 import "./styles/Posts.css";
 
 import { Loading } from "./Loading";
@@ -14,18 +15,20 @@ import { MarkdownContents } from "../utils/MarkdownParser";
 import urlProvider from "../utils/ImageProvider";
 
 const components = {
-  code({ node, inline, className, children, ...props }) {
-    const match = /language-(\w+)/.exec(className || "");
-    return !inline && match ? (
+  code({ children }) {
+    return (
       <SyntaxHighlighter
         style={docco}
-        language={match[1]}
+        language="javascript"
+        children={children}
+        lineNumberStyle={{
+          color: "gray",
+          fontSize: "0.875rem;",
+          textAlign: "center",
+        }}
+        showLineNumbers={true}
         PreTag="div"
-        children={String(children).replace(/\n$/, "")}
-        {...props}
       />
-    ) : (
-      <code className={className} {...props} />
     );
   },
 };
@@ -51,9 +54,7 @@ export const Posts = ({ match }) => {
 
       const postsId = match.params.postsId;
       const data = await getDetail(postsId);
-      const postsContent = data.contents
-        .replaceAll("    ", "")
-        .replaceAll(">", "");
+      const postsContent = data.contents;
 
       setDetailData(data);
       setTags(data.tag.split(" "));

@@ -22,6 +22,7 @@ export const Login = ({ history }) => {
         history.push("/new");
       }
     } catch (error) {
+      alert("error");
       return error;
     }
   };
