@@ -24,7 +24,7 @@ export const PostsListBox = ({
       <p className="posts_summary">{summary}</p>
       <div className="posts_list_box_tags">
         {tagArray.map((tag, idx) => (
-          <TagBox key={`tag_box_${idx}`} tagName={tag} id={idx} />
+          <TagBox key={`tag_box_${idx}`} tagName={tag} />
         ))}
       </div>
       <p className="posts_updated_time">{updateTime}</p>
