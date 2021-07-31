@@ -1,19 +1,45 @@
-.new_blog_template {
-  width: 60%;
-  height: fit-content;
+.new_posts_template {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 100%;
   margin: 150px auto;
 }
 
-.new_blog_template input {
-  width: 50%;
-  height: 30px;
-  border-radius: 3px;
-  border: 1px solid lightgray;
+.new_posts_input {
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid black;
 }
 
-.new_blog_template textarea {
-  width: 100%;
-  height: 300px;
-  border-radius: 3px;
-  border: 1px solid lightgray;
+.posts_title,
+.posts_tags {
+  width: 92.5%;
+  height: 1.2rem;
+  padding: 10px;
+  font-size: large;
+  font-family: emoji;
+}
+
+.posts_textarea {
+  width: 90%;
+  height: 50%;
+  padding: 20px;
+  font-size: large;
+  font-family: emoji;
+}
+
+.new_posts_input button {
+  width: 80px;
+  height: 60px;
+  margin-top: 0 1rem;
+}
+
+.posts_preview {
+  flex: 1;
+
+  padding: 20px;
+  font-size: large;
 }
