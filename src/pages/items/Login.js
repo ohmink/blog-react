@@ -28,7 +28,7 @@ export const Login = ({ history }) => {
   };
 
   return (
-    <div className="login_template">
+    <form className="login_template">
       <div>
         <p className="login_close_button" onClick={closeLogin}>
           X
@@ -37,8 +37,8 @@ export const Login = ({ history }) => {
       <p>Admin ID</p>
       <input type="text" id="input_username" />
       <p>Admin PW</p>
-      <input type="password" id="input_password" />
+      <input type="password" autoComplete="off" id="input_password" />
       <button onClick={tryLogin}>Login</button>
-    </div>
+    </form>
   );
 };
