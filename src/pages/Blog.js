@@ -4,7 +4,7 @@ import "./styles/Blog.css";
 import { Login } from "./items/Login";
 import { PostsListBox } from "./items/PostsListBox";
 import { Loading } from "./Loading";
-import { getAll } from "../utils/PostsApi";
+import { getAll, isLogin } from "../utils/PostsApi";
 import { getTagList } from "../utils/PostsHelper";
 import urlProvider from "../utils/ImageProvider";
 
@@ -17,9 +17,12 @@ export const Blog = ({ history }) => {
   const [loading, setLoading] = useState(true);
 
   const openLogin = () => {
-    alert("관리자 기능입니다.");
-    const loginTemplate = document.querySelector(".login_template");
-    loginTemplate.style.display = "flex";
+    if (isLogin()) history.push("/new");
+    else {
+      alert("관리자 기능입니다.");
+      const loginTemplate = document.querySelector(".login_template");
+      loginTemplate.style.display = "flex";
+    }
   };
 
   const tagButtonClicked = (e) => {

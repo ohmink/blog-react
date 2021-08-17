@@ -1,5 +1,10 @@
 import axios from "axios";
 
+export const isLogin = () => {
+  if (axios.defaults.headers.common["Authorization"]) return true;
+  return false;
+};
+
 export const login = async (data) => {
   const response = await axios.post(
     "https://ohmink-blog-server.herokuapp.com/user/login",
@@ -51,6 +56,26 @@ export const create = async (data) => {
   }
 };
 
-const remove = () => {};
+const remove = async (id) => {
+  try {
+    const response = await axios.delete(
+      `https://ohmink-blog-server.herokuapp.com/posts/delete/:${id}`
+    );
 
-const update = () => {};
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+const update = async (id) => {
+  try {
+    const response = await axios.patch(
+      `https://ohmink-blog-server.herokuapp.com/posts/patch/:${id}`
+    );
+
+    return response;
+  } catch (error) {
+    return error;
+  }
+};

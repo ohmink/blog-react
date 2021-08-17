@@ -15,7 +15,7 @@ const components = {
         children={children}
         lineNumberStyle={{
           color: "gray",
-          fontSize: "0.875rem;",
+          fontSize: "rem;",
           textAlign: "center",
         }}
         showLineNumbers={true}
@@ -25,7 +25,7 @@ const components = {
   },
 };
 
-export const NewPosts = () => {
+export const NewPosts = ({ history }) => {
   const [input, setInput] = useState();
 
   const createPosts = async () => {
@@ -34,6 +34,11 @@ export const NewPosts = () => {
     const contents = document.getElementById("posts_create_content").value;
 
     await create({ title: title, tag: tag, contents: contents });
+    goBack();
+  };
+
+  const goBack = () => {
+    history.push("/");
   };
 
   return (
@@ -51,6 +56,7 @@ export const NewPosts = () => {
           onChange={(e) => setInput(e.target.value)}
         />
         <button onClick={createPosts}>생성</button>
+        <button onClick={goBack}>취소</button>
       </div>
       <ReactMarkdown
         className="posts_preview"
