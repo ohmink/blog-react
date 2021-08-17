@@ -23,7 +23,7 @@ const components = {
         children={children}
         lineNumberStyle={{
           color: "gray",
-          fontSize: "0.875rem;",
+          fontSize: "0.875rem",
           textAlign: "center",
         }}
         showLineNumbers={true}
