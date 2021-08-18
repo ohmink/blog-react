@@ -9,7 +9,7 @@ import "./styles/Posts.css";
 import { Loading } from "./Loading";
 import { TagBox } from "./items/TagBox";
 import { CirCleButton } from "./items/CircleButton";
-import { getDetail } from "../utils/PostsApi";
+import { isLogin, getDetail, remove, update } from "../utils/PostsApi";
 import { getUpdateTime } from "../utils/PostsHelper";
 import { MarkdownContents } from "../utils/MarkdownParser";
 import urlProvider from "../utils/ImageProvider";
@@ -33,11 +33,28 @@ const components = {
   },
 };
 
-export const Posts = ({ match }) => {
+export const Posts = ({ match, history }) => {
   const [loading, setLoading] = useState(true);
   const [detailData, setDetailData] = useState(null);
   const [tags, setTags] = useState(null);
   const [content, setContent] = useState(null);
+
+  const updatePosts = async () => {
+    history.push({
+      pathname: "/new",
+      state: {
+        id: match.params.postsId,
+        title: detailData.title,
+        tags: tags.join(" "),
+        content: content,
+      },
+    });
+  };
+
+  const deletePosts = async () => {
+    const res = await remove(match.params.postsId);
+    if (res === 200) history.push("/");
+  };
 
   const toTheTop = () => (document.documentElement.scrollTop = 0);
 
@@ -86,6 +103,14 @@ export const Posts = ({ match }) => {
             ))}
           </div>
           <div className="posts_detail_info_time">
+            {isLogin() ? (
+              <div>
+                <button onClick={updatePosts}>수정</button>
+                <button onClick={deletePosts}>삭제</button>
+              </div>
+            ) : (
+              <span />
+            )}
             {getUpdateTime(detailData.updatedAt)}
           </div>
         </div>
