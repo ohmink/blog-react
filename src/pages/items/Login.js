@@ -18,9 +18,7 @@ export const Login = ({ history }) => {
         password: password.value,
       });
 
-      if (status >= 200 && status < 300) {
-        history.push("/new");
-      }
+      if (status >= 200 && status < 300) history.push("/new");
     } catch (error) {
       alert("error");
       return error;
@@ -28,17 +26,20 @@ export const Login = ({ history }) => {
   };
 
   return (
-    <form className="login_template">
+    <div className="login_template">
       <div>
-        <p className="login_close_button" onClick={closeLogin}>
+        <h3>If you are not admin →</h3>
+        <button className="login_close_button" onClick={closeLogin}>
           X
-        </p>
+        </button>
       </div>
-      <p>Admin ID</p>
-      <input type="text" id="input_username" />
-      <p>Admin PW</p>
+      <p>Admin name</p>
+      <input type="text" autoComplete="off" id="input_username" />
+      <p>Admin password</p>
       <input type="password" autoComplete="off" id="input_password" />
-      <button onClick={tryLogin}>Login</button>
-    </form>
+      <button className="submit_button" onClick={tryLogin}>
+        Login
+      </button>
+    </div>
   );
 };
