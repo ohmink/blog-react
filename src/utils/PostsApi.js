@@ -6,13 +6,9 @@ export const isLogin = () => {
 };
 
 export const login = async (data) => {
-  const response = await axios.post(
-    "https://ohmink-blog-server.herokuapp.com/user/login",
-    data,
-    {
-      withCreadentials: true,
-    }
-  );
+  const response = await axios.post("http://localhost:3001/user/login", data, {
+    withCreadentials: true,
+  });
 
   axios.defaults.headers.common[
     "Authorization"
@@ -23,9 +19,7 @@ export const login = async (data) => {
 
 export const getAll = async () => {
   try {
-    const answer = await axios.get(
-      `https://ohmink-blog-server.herokuapp.com/posts/getAll`
-    );
+    const answer = await axios.get(`http://localhost:3001/posts/getAll`);
     return answer.data;
   } catch (error) {
     return error;
@@ -35,7 +29,7 @@ export const getAll = async () => {
 export const getDetail = async (postsId) => {
   try {
     const answer = await axios.get(
-      `https://ohmink-blog-server.herokuapp.com/posts/getDetail/${postsId}`
+      `http://localhost:3001/posts/getDetail/${postsId}`
     );
     return answer.data;
   } catch (error) {
@@ -46,7 +40,7 @@ export const getDetail = async (postsId) => {
 export const create = async (data) => {
   try {
     const response = await axios.post(
-      "https://ohmink-blog-server.herokuapp.com/posts/create",
+      "http://localhost:3001/posts/create",
       data
     );
 
@@ -56,25 +50,26 @@ export const create = async (data) => {
   }
 };
 
-const remove = async (id) => {
+export const remove = async (id) => {
   try {
     const response = await axios.delete(
-      `https://ohmink-blog-server.herokuapp.com/posts/delete/:${id}`
+      `http://localhost:3001/posts/delete/${id}`
     );
 
-    return response;
+    return response.status;
   } catch (error) {
     return error;
   }
 };
 
-const update = async (id) => {
+export const update = async (id, data) => {
   try {
     const response = await axios.patch(
-      `https://ohmink-blog-server.herokuapp.com/posts/patch/:${id}`
+      `http://localhost:3001/posts/patch/${id}`,
+      data
     );
 
-    return response;
+    return response.status;
   } catch (error) {
     return error;
   }
