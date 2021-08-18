@@ -6,9 +6,13 @@ export const isLogin = () => {
 };
 
 export const login = async (data) => {
-  const response = await axios.post("http://localhost:3001/user/login", data, {
-    withCreadentials: true,
-  });
+  const response = await axios.post(
+    "https://ohmink-blog-server.herokuapp.com/user/login",
+    data,
+    {
+      withCreadentials: true,
+    }
+  );
 
   axios.defaults.headers.common[
     "Authorization"
@@ -19,7 +23,9 @@ export const login = async (data) => {
 
 export const getAll = async () => {
   try {
-    const answer = await axios.get(`http://localhost:3001/posts/getAll`);
+    const answer = await axios.get(
+      "https://ohmink-blog-server.herokuapp.com/posts/getAll"
+    );
     return answer.data;
   } catch (error) {
     return error;
@@ -29,7 +35,7 @@ export const getAll = async () => {
 export const getDetail = async (postsId) => {
   try {
     const answer = await axios.get(
-      `http://localhost:3001/posts/getDetail/${postsId}`
+      `https://ohmink-blog-server.herokuapp.com/posts/getDetail/${postsId}`
     );
     return answer.data;
   } catch (error) {
@@ -40,7 +46,7 @@ export const getDetail = async (postsId) => {
 export const create = async (data) => {
   try {
     const response = await axios.post(
-      "http://localhost:3001/posts/create",
+      "https://ohmink-blog-server.herokuapp.com/posts/create",
       data
     );
 
@@ -53,7 +59,7 @@ export const create = async (data) => {
 export const remove = async (id) => {
   try {
     const response = await axios.delete(
-      `http://localhost:3001/posts/delete/${id}`
+      `https://ohmink-blog-server.herokuapp.com/posts/delete/${id}`
     );
 
     return response.status;
@@ -65,7 +71,7 @@ export const remove = async (id) => {
 export const update = async (id, data) => {
   try {
     const response = await axios.patch(
-      `http://localhost:3001/posts/patch/${id}`,
+      `https://ohmink-blog-server.herokuapp.com/posts/patch/${id}`,
       data
     );
 
