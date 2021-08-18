@@ -19,12 +19,12 @@ export const Header = () => {
         <Link className="header_button" to="/about">
           About
         </Link>
-        <buttton
+        <button
           className="header_button"
           onClick={() => alert("준비 중입니다.")}
         >
           Project
-        </buttton>
+        </button>
         <button className="header_button" onClick={openGithub}>
           Github
         </button>
