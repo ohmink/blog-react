@@ -9,6 +9,9 @@ export const Header = () => {
   function goHome() {
     window.location.href = "/";
   }
+  function goProject() {
+    window.location.href = "/project";
+  }
 
   return (
     <div className="header">
@@ -19,11 +22,8 @@ export const Header = () => {
         <Link className="header_button" to="/about">
           About
         </Link>
-        <button
-          className="header_button"
-          onClick={() => alert("준비 중입니다.")}
-        >
-          Project
+        <button className="header_button" onClick={goProject}>
+          Toys
         </button>
         <button className="header_button" onClick={openGithub}>
           Github
