@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/Modal.css";
-import ProjectsContents from "./projects_contents";
+import ProjectsContents from "./toy_contents/toys";
 
 export const Modal = ({ isOpen, project, setIsOpen }) => {
   const close = (e) => {
