@@ -9,9 +9,6 @@ export const Header = () => {
   function goHome() {
     window.location.href = "/";
   }
-  function goToys() {
-    window.location.href = "/toys";
-  }
 
   return (
     <header className="header">
@@ -22,9 +19,9 @@ export const Header = () => {
         <Link className="header_button" to="/about">
           About
         </Link>
-        <button className="header_button" onClick={goToys}>
+        <Link className="header_button" to="/toys">
           Toys
-        </button>
+        </Link>
         <button className="header_button" onClick={openGithub}>
           Github
         </button>

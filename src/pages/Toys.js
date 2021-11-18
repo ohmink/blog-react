@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./styles/Toys.css";
-import { Cover } from "./projects_items/Cover";
-import { Modal } from "./projects_items/Modal";
+import { Cover } from "./toys_items/Cover";
+import { Modal } from "./toys_items/Modal";
 import { viewInit, wheel } from "../utils/CoversHelper";
-import ProjectsContents from "./projects_items/projects_contents/index";
+import ProjectsContents from "./toys_items/toy_contents/toys";
 
 export const Toys = () => {
   const MAX = 30;
