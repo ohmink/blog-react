@@ -1,0 +1,42 @@
+.cover {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: serif;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.top_image_container {
+  flex: 0.3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top_image {
+  width: 20%;
+  margin: 0.5rem;
+}
+
+.cover h1 {
+  flex: 1;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0.5rem;
+  padding: 0;
+}
+
+.cover_contents {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.bottom_image {
+  width: 30px;
+  height: 60px;
+  margin: 0.5rem;
+  overflow: hidden;
+}
