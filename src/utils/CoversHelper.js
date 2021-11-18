@@ -56,7 +56,6 @@ const setLeftCovers = (covers, half) => {
     y -= 20;
     const cover = covers[i];
     const opposite = covers[t];
-    // const [x, y, r] = getTransfrom(opposite.style.transform);
 
     cover.style.width = opposite.style.width;
     cover.style.height = opposite.style.height;
@@ -67,11 +66,6 @@ const setLeftCovers = (covers, half) => {
 };
 
 export const viewInit = () => {
-  // setTimeout(() => {
-  //   for (const cover of covers)
-  //     cover.style.transition = "transform width height 0.1s";
-  // }, 1000);
-
   cleanTemplate();
 
   const covers = document.querySelectorAll(".active");
