@@ -3,7 +3,7 @@ import "./styles/Cover.css";
 
 export const Cover = ({ title, number, onProject }) => {
   return (
-    <li className="active" id={`cover_${number}`} onClick={onProject}>
+    <div className="active" id={`cover_${number}`} onClick={onProject}>
       <div className="cover">
         <div className="top_image_container">
           <img
@@ -20,6 +20,6 @@ export const Cover = ({ title, number, onProject }) => {
           />
         </div>
       </div>
-    </li>
+    </div>
   );
 };

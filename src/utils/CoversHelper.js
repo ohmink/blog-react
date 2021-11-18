@@ -13,22 +13,7 @@ const sampleColors = [
   "#6c9c2e",
   "#71a72f",
   "#7ab337",
-  "#cc352b",
-  "#bd2e25",
-  "#b02820",
-  "#e7af02",
-  "#cc9a01",
-  "#aa8100",
-  "#aa8100",
-  "#3b358d",
-  "#3f3991",
-  "#1b7a8f",
-  "#19748a",
-  "#1a758b",
-  "#6c9c2e",
-  "#71a72f",
-  "#7ab337",
-  "black",
+  "gray",
 ];
 
 const getTransfrom = (str) => str.match(/[0-9]+|[-0-9]+/g);
@@ -41,50 +26,51 @@ const cleanTemplate = () => {
   if (header) app.removeChild(header);
 };
 const setRightCovers = (covers, half) => {
-  let [width, wN] = [174, -6.5];
-  let [height, hN] = [240, -8];
+  let width = 15,
+    height = 20,
+    x = -50,
+    y = -30;
   let zIndex = covers.length;
-  let [x, y] = [0, 0];
-  let [xN, yN] = [80, 8];
-  let rotate = 0;
 
   for (let i = 0; i <= half; i++) {
     const cover = covers[i];
 
-    cover.style.width = `${width}px`;
-    cover.style.height = `${height}px`;
-    cover.style.transform = `translate(${x}%, ${y}%) rotate(${rotate}deg)`;
+    cover.style.width = `${width}rem`;
+    cover.style.height = `${height}rem`;
+    cover.style.transform = `translate(${x}%, ${y}%)`;
     cover.style.backgroundColor = sampleColors[i] ? sampleColors[i] : "black";
     cover.style.zIndex = zIndex;
 
     zIndex--;
-    width += wN;
-    height += hN;
-    x += xN;
-    y += yN;
-    yN += 10;
-    rotate += 8;
+    width -= 0.5;
+    height--;
+    x += 60;
+    y += 20;
   }
 };
 const setLeftCovers = (covers, half) => {
+  let x = -50,
+    y = -30;
   for (let i = covers.length - 1, t = 1; i > half; i--, t++) {
+    x -= 60;
+    y -= 20;
     const cover = covers[i];
     const opposite = covers[t];
-    const [x, y, r] = getTransfrom(opposite.style.transform);
+    // const [x, y, r] = getTransfrom(opposite.style.transform);
 
     cover.style.width = opposite.style.width;
     cover.style.height = opposite.style.height;
     cover.style.zIndex = opposite.style.zIndex;
-    cover.style.transform = `translate(-${x}%, ${y}%) rotate(-${r}deg)`;
+    cover.style.transform = `translate(${x}%, ${y}%)`;
     cover.style.backgroundColor = sampleColors[i];
   }
 };
 
 export const viewInit = () => {
-  setTimeout(() => {
-    for (const cover of covers)
-      cover.style.transition = "transform width height 0.1s";
-  }, 1000);
+  // setTimeout(() => {
+  //   for (const cover of covers)
+  //     cover.style.transition = "transform width height 0.1s";
+  // }, 1000);
 
   cleanTemplate();
 
