@@ -83,7 +83,7 @@ const setLeftCovers = (covers, half) => {
 export const viewInit = () => {
   setTimeout(() => {
     for (const cover of covers)
-      cover.style.transition = "transform width height 0.1s 0.1s";
+      cover.style.transition = "transform width height 0.1s";
   }, 1000);
 
   cleanTemplate();

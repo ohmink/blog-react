@@ -1,0 +1,12 @@
+.project_modal {
+  display: flex;
+
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  margin: 0 auto;
+  z-index: 100;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
