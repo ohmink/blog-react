@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./styles/Blog.css";
 
+import { Header } from "../common/Header";
+import { SideBar } from "./items/SideBar";
 import { Login } from "./items/Login";
 import { PostsListBox } from "./items/PostsListBox";
 import { Loading } from "./Loading";
@@ -41,6 +43,10 @@ export const Blog = ({ history }) => {
     selectedTag.style.fontWeight = "bold";
     selectedTag.style.color = "lightseagreen";
     setCurTag(selectedTag);
+
+    if (selectedList.length <= 8)
+      document.querySelector(".blog_template").style.height = "100vh";
+    else document.querySelector(".blog_template").style.height = "100%";
   };
 
   useEffect(() => {
@@ -75,42 +81,42 @@ export const Blog = ({ history }) => {
 
   return (
     <div className="blog_template">
-      <div className="tags_container">
+      <Header />
+      <main className="blog_template_main">
+        <SideBar
+          tags={tags}
+          tagButtonClicked={tagButtonClicked}
+          tagCount={tagCount}
+        />
+        <ul className="posts_container">
+          {postsData.map((data) => {
+            if (data.tag && data.contents)
+              return (
+                <PostsListBox
+                  key={data._id}
+                  id={data._id}
+                  title={data.title}
+                  tags={data.tag}
+                  contents={data.contents}
+                  updatedAt={data.createdAt}
+                  history={history}
+                />
+              );
+            else {
+              return null;
+            }
+          })}
+        </ul>
         <div>
-          <h3>태그 목록</h3>
-          <hr />
-          {tags.map((tag, idx) => (
-            <button
-              key={idx}
-              className="tag_button"
-              id={tag}
-              onClick={tagButtonClicked}
-            >
-              {tag}({tagCount[tag]})
-            </button>
-          ))}
+          <img
+            alt=""
+            className="set_img"
+            onClick={openLogin}
+            src={urlProvider.set}
+          />
+          <Login history={history} />
         </div>
-      </div>
-      <div className="posts_container">
-        {postsData.map((data) => {
-          if (data.tag && data.contents)
-            return (
-              <PostsListBox
-                key={data._id}
-                id={data._id}
-                title={data.title}
-                tags={data.tag}
-                contents={data.contents}
-                updatedAt={data.updatedAt}
-                history={history}
-              />
-            );
-        })}
-      </div>
-      <div>
-        <img className="set_img" onClick={openLogin} src={urlProvider.set} />
-        <Login history={history} />
-      </div>
+      </main>
     </div>
   );
 };

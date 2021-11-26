@@ -1,60 +1,23 @@
 .blog_template {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   width: 100%;
-  height: 700px;
+  height: 100%;
 
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
+  padding-bottom: 50px;
 
-.tags_container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  width: 20%;
-  margin: 0 auto;
+  background-color: #f1f1f1;
 
-  position: fixed;
-}
-
-.tags_container div {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  margin: 0 auto;
-
-  width: 35%;
-}
-
-.tags_container h3 {
-  margin-bottom: 0;
-}
-
-.tags_container hr {
-  width: 100px;
-  margin-left: 0;
-  border-top: 0.5px solid gray;
-}
-
-.tag_button {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  padding-left: 0;
-  font-size: medium;
-  margin: 3px 0;
-}
-
-.tag_button:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  color: darkslateblue;
+  font-family: "Ubuntu Condensed", "Noto Sans Korean";
 }
 
 .posts_container {
-  width: 60%;
-  margin: 0 auto;
-  padding-left: 150px;
+  width: 70%;
+  margin: 100px 0 50px 330px;
+  padding-left: 0;
+  padding-bottom: 10px;
+  background-color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
