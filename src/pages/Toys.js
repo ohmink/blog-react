@@ -26,15 +26,10 @@ export const Toys = () => {
 
   const onProject = (e) => {
     const card = e.target.closest(".active");
-    // card.classList.toggle("ani");
     const id = card.id.split("_")[1];
+
     setModalStatus(true);
     setProject(+id - 1);
-
-    // setTimeout(() => {
-    //   setModalStatus(true);
-    //   setProject(+id - 1);
-    // }, 1000);
   };
 
   useEffect(() => {
@@ -67,14 +62,10 @@ export const Toys = () => {
         <h2>Circle Slide - Wheel</h2>
         <h3>Created at 2021</h3>
       </div>
-      <div className="wheel_intro">
-        <h2>Circle Slide - Wheel</h2>
-        <h3>Created at 2021</h3>
-      </div>
-      <div className="Card_intro">
+      {/* <div className="Card_intro">
         <h2>Card Title</h2>
         <h3>Created at 2021</h3>
-      </div>
+      </div> */}
     </main>
   );
 };

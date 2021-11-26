@@ -69,22 +69,22 @@ export const About = () => {
         </div>
         <div className="about_test_container">
           <div onClick={clickButton} id="personality_test">
-            <img src={urlProvider.test.personality} />
+            <img alt="" src={urlProvider.test.personality} />
             <p>인성검사</p>
           </div>
           <div onClick={clickButton} id="aptitute_test">
-            <img src={urlProvider.test.aptitute} />
+            <img alt="" src={urlProvider.test.aptitute} />
             <p>적성검사</p>
           </div>
           <div onClick={clickButton} id="mind_test">
-            <img src={urlProvider.test.mind} />
+            <img alt="" src={urlProvider.test.mind} />
             <p>심리검사</p>
           </div>
         </div>
       </div>
       <div className="about_test_modal" onClick={clickButton}>
         {seletedTest.map((url) => (
-          <img key={url} src={url} />
+          <img alt="" key={url} src={url} />
         ))}
       </div>
       <div className="about_code_record">
@@ -92,7 +92,7 @@ export const About = () => {
           <h1>Days I</h1>
           <h1 className="about_tech_name">&nbsp;Code</h1>
         </div>
-        <img src="https://ghchart.rshah.org/green/ohmink" />
+        <img alt="" src="https://ghchart.rshah.org/green/ohmink" />
       </div>
     </div>
   );
