@@ -2,7 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import "./styles/Clock.css";
 
 export const Clock = () => {
-  let now = new Date();
+  // let now = new Date();
+  const [now, setNow] = useState(new Date());
   const [hour, setHour] = useState(
     String(now.getHours()).padStart(2, "0").split("")
   );
@@ -16,14 +17,14 @@ export const Clock = () => {
 
   useEffect(() => {
     interval.current = setInterval(() => {
-      now = new Date();
+      setNow(new Date());
       setHour(String(now.getHours()).padStart(2, "0").split(""));
       setMinutes(String(now.getMinutes()).padStart(2, "0").split(""));
       setSeconds(String(now.getSeconds()).padStart(2, "0").split(""));
     }, 1000);
 
     return () => clearInterval(interval.current);
-  }, []);
+  }, [now]);
 
   return (
     <div className="clock">

@@ -7,6 +7,7 @@ export const Cover = ({ title, number, onProject }) => {
       <div className="cover">
         <div className="top_image_container">
           <img
+            alt=""
             className="top_image"
             src="https://user-images.githubusercontent.com/45379812/137182335-947fd04d-c923-4a62-869c-6457ea259bec.png"
           />
@@ -15,6 +16,7 @@ export const Cover = ({ title, number, onProject }) => {
         <div className="cover_contents">
           <h1>{String(number).padStart(2, "0")}</h1>
           <img
+            alt=""
             className="bottom_image"
             src="https://user-images.githubusercontent.com/45379812/137182328-dcc7f602-fc0a-4b12-b9f3-75957fe13326.png"
           />
