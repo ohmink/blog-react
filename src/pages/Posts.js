@@ -9,7 +9,7 @@ import "./styles/Posts.css";
 import { Loading } from "./Loading";
 import { TagBox } from "./items/TagBox";
 import { CirCleButton } from "./items/CircleButton";
-import { isLogin, getDetail, remove, update } from "../utils/PostsApi";
+import { isLogin, getDetail, remove } from "../utils/PostsApi";
 import { getUpdateTime } from "../utils/PostsHelper";
 import { MarkdownContents } from "../utils/MarkdownParser";
 import urlProvider from "../utils/ImageProvider";
@@ -80,7 +80,7 @@ export const Posts = ({ match, history }) => {
     };
 
     getDetailPosts();
-  }, []);
+  }, [match.params.postsId]);
 
   if (loading) return <Loading />;
 

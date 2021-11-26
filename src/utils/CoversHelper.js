@@ -16,15 +16,6 @@ const sampleColors = [
   "gray",
 ];
 
-const getTransfrom = (str) => str.match(/[0-9]+|[-0-9]+/g);
-const cleanTemplate = () => {
-  const template = document.querySelector(".templates");
-  template.style.margin = "0";
-
-  const header = document.querySelector(".header");
-  const app = document.querySelector(".App");
-  if (header) app.removeChild(header);
-};
 const setRightCovers = (covers, half) => {
   let width = 15,
     height = 20,
@@ -66,8 +57,6 @@ const setLeftCovers = (covers, half) => {
 };
 
 export const viewInit = () => {
-  cleanTemplate();
-
   const covers = document.querySelectorAll(".active");
   const half = Math.floor(covers.length / 2);
 

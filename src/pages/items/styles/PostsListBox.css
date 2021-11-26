@@ -1,18 +1,29 @@
 .posts_list_box {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
 
-  width: 95%;
-  height: fit-content;
+  width: 92%;
+  margin: 0 auto;
 
-  margin: 15px auto;
-
-  border-bottom: 2px;
-  border-bottom-color: black;
-  border-bottom-style: solid;
+  padding: 12px 10px 0 0;
+  list-style: none;
+  font-size: 14px;
+  border-bottom: 1px dotted #ddd;
 
   word-break: break-all;
+}
+
+.posts_list_box_title {
+  flex: 1.2;
+  text-align: left;
+}
+
+.posts_list_box_contents {
+  flex: 0.7;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .posts_list_box:hover {
@@ -29,12 +40,12 @@
   flex: 3;
 }
 
-.posts_list_box div {
-  flex: 0.5;
+.posts_list_box_tags {
+  flex: 0.7;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
 
   width: max-content;
 }
@@ -44,7 +55,8 @@
 }
 
 .posts_updated_time {
-  flex: 0.5;
+  flex: 0.3;
   color: gray;
   font-weight: lighter;
+  text-align: right;
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./styles/NewPosts.css";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
