@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import SyntaxHighlighter from "react-syntax-highlighter";
@@ -11,7 +11,7 @@ import { TagBox } from "./items/TagBox";
 import { CirCleButton } from "./items/CircleButton";
 import { isLogin, getDetail, remove } from "../utils/PostsApi";
 import { getUpdateTime } from "../utils/PostsHelper";
-import { MarkdownContents } from "../utils/MarkdownParser";
+import { MarkdownNav } from "./items/MarkdownNav";
 import urlProvider from "../utils/ImageProvider";
 
 const components = {
@@ -39,6 +39,8 @@ export const Posts = ({ match, history }) => {
   const [tags, setTags] = useState(null);
   const [content, setContent] = useState(null);
 
+  const goHome = () => history.push("/");
+
   const updatePosts = async () => {
     history.push({
       pathname: "/new",
@@ -55,12 +57,6 @@ export const Posts = ({ match, history }) => {
     const res = await remove(match.params.postsId);
     if (res === 200) history.push("/");
   };
-
-  const toTheTop = () => (document.documentElement.scrollTop = 0);
-
-  const toTheBottom = () =>
-    (document.documentElement.scrollTop =
-      document.documentElement.scrollHeight);
 
   useEffect(() => {
     const getDetailPosts = async () => {
@@ -86,11 +82,9 @@ export const Posts = ({ match, history }) => {
 
   return (
     <div className="posts_detail_template">
-      <div className="markdown_contents_container">
-        <MarkdownContents
-          postsContent={content}
-          className="markdown_contents"
-        />
+      <div className="markdown_nav_container">
+        <h2 onClick={goHome}>Code Story</h2>
+        <MarkdownNav title={detailData.title} postsContent={content} />
       </div>
       <div className="posts_detail_container">
         <div className="posts_detail_title">
@@ -121,7 +115,7 @@ export const Posts = ({ match, history }) => {
           children={content}
         />
       </div>
-      <div className="posts_detail_nav">
+      {/* <div className="posts_detail_nav">
         <CirCleButton
           className="posts_detail_nav_button"
           primary={true}
@@ -154,7 +148,7 @@ export const Posts = ({ match, history }) => {
           backgroundColor="whitesmoke"
           onClick={toTheBottom}
         />
-      </div>
+      </div> */}
     </div>
   );
 };

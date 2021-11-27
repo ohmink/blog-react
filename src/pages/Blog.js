@@ -87,6 +87,7 @@ export const Blog = ({ history }) => {
           tags={tags}
           tagButtonClicked={tagButtonClicked}
           tagCount={tagCount}
+          history={history}
         />
         <ul className="posts_container">
           {postsData.map((data) => {
@@ -107,7 +108,7 @@ export const Blog = ({ history }) => {
             }
           })}
         </ul>
-        <div>
+        {/* <div>
           <img
             alt=""
             className="set_img"
@@ -115,7 +116,7 @@ export const Blog = ({ history }) => {
             src={urlProvider.set}
           />
           <Login history={history} />
-        </div>
+        </div> */}
       </main>
     </div>
   );
