@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Route path="/" exact={true} component={Blog} />
-      <Route path="/post/:postsId" exact component={Posts} />
+      <Route path="/post/:postsId" exact={true} component={Posts} />
       <Route path="/about" component={About} />
       <Route path="/toys" component={Toys} />
       <Route path="/new" component={NewPosts} />

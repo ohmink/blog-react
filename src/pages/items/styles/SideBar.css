@@ -9,12 +9,20 @@
   background-color: #fff;
   border-right: 1px solid #ddd;
   cursor: default;
+
+  display: flex;
+  flex-direction: column;
 }
 
-.sidebar h2 {
+.sidebar a {
   width: 50%;
-  margin: 60px auto;
+  margin: 5rem auto;
+
+  color: black;
+  font-size: 1.5em;
+  font-weight: bold;
   font-family: serif;
+  text-decoration: none;
 }
 
 .sidebar div {
@@ -22,7 +30,7 @@
   flex-direction: column;
 
   position: relative;
-  top: 80px;
+  top: 3rem;
   left: 0;
 }
 
