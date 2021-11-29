@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import SyntaxHighlighter from "react-syntax-highlighter";
@@ -6,12 +6,12 @@ import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 import "./styles/Posts.css";
 
+import { SideBar } from "./items/SideBar";
 import { Loading } from "./Loading";
 import { TagBox } from "./items/TagBox";
 import { CirCleButton } from "./items/CircleButton";
 import { isLogin, getDetail, remove } from "../utils/PostsApi";
 import { getUpdateTime } from "../utils/PostsHelper";
-import { MarkdownNav } from "./items/MarkdownNav";
 import urlProvider from "../utils/ImageProvider";
 
 const components = {
@@ -76,16 +76,18 @@ export const Posts = ({ match, history }) => {
     };
 
     getDetailPosts();
-  }, [match.params.postsId]);
+  }, []);
 
   if (loading) return <Loading />;
 
+  const data = {
+    title: detailData.title,
+    postsContent: content,
+  };
+
   return (
     <div className="posts_detail_template">
-      <div className="markdown_nav_container">
-        <h2 onClick={goHome}>Code Story</h2>
-        <MarkdownNav title={detailData.title} postsContent={content} />
-      </div>
+      <SideBar contentsType="MarkdownNav" data={data} homeFunction={goHome} />
       <div className="posts_detail_container">
         <div className="posts_detail_title">
           <p>{detailData.title}</p>

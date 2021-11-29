@@ -1,24 +1,24 @@
 import React from "react";
 import "./styles/SideBar.css";
 
-export const SideBar = ({ tags, tagButtonClicked, tagCount, history }) => {
+import { MarkdownNav } from "./sidebar_children/MarkdownNav";
+import { TagList } from "./sidebar_children/TagList";
+
+export const SideBar = ({ contentsType, data, homeFunction }) => {
   return (
     <div className="sidebar">
-      <a href="./">Code Story</a>
-      <div>
-        <h3>태그 목록</h3>
-        <hr />
-        {tags.map((tag, idx) => (
-          <button
-            key={idx}
-            className="tag_button"
-            id={tag}
-            onClick={tagButtonClicked}
-          >
-            {tag}({tagCount[tag]})
-          </button>
-        ))}
-      </div>
+      <p onClick={homeFunction} className="sidebar_home">
+        Code Story
+      </p>
+      {contentsType === "MarkdownNav" ? (
+        <MarkdownNav title={data.title} postsContent={data.postsContent} />
+      ) : (
+        <TagList
+          tags={data.tags}
+          tagButtonClicked={data.tagButtonClicked}
+          tagCount={data.tagCount}
+        />
+      )}
     </div>
   );
 };

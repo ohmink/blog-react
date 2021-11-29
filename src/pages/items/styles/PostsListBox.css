@@ -17,6 +17,7 @@
 .posts_list_box_title {
   flex: 1.2;
   text-align: left;
+  padding: 0 1.2rem 0 0;
 }
 
 .posts_list_box_contents {
