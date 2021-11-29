@@ -18,6 +18,8 @@ export const Blog = ({ history }) => {
   const [postsData, setPostsData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const goHome = () => window.location.reload();
+
   const openLogin = () => {
     if (isLogin()) history.push("/new");
     else {
@@ -79,16 +81,18 @@ export const Blog = ({ history }) => {
 
   if (loading) return <Loading />;
 
+  const data = {
+    tags: tags,
+    tagButtonClicked: tagButtonClicked,
+    tagCount: tagCount,
+    history: history,
+  };
+
   return (
     <div className="blog_template">
       <Header />
       <main className="blog_template_main">
-        <SideBar
-          tags={tags}
-          tagButtonClicked={tagButtonClicked}
-          tagCount={tagCount}
-          history={history}
-        />
+        <SideBar contentsType={"TagList"} data={data} homeFunction={goHome} />
         <ul className="posts_container">
           {postsData.map((data) => {
             if (data.tag && data.contents)

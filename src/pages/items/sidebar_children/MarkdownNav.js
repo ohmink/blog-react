@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import "./styles/MarkdownNav.css";
-import { getNavItems } from "../../utils/MarkdownParser";
+import "./MarkdownNav.css";
+import { getNavItems } from "../../../utils/MarkdownParser";
 
 export const MarkdownNav = ({ title, postsContent }) => {
   const strArray = getNavItems(postsContent);
