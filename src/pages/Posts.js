@@ -117,40 +117,6 @@ export const Posts = ({ match, history }) => {
           children={content}
         />
       </div>
-      {/* <div className="posts_detail_nav">
-        <CirCleButton
-          className="posts_detail_nav_button"
-          primary={true}
-          backgroundImage={urlProvider.nav.upImgUrl}
-          backgroundColor="whitesmoke"
-          onClick={toTheTop}
-        />
-        <div>
-          <CirCleButton
-            className="posts_detail_nav_button"
-            primary={true}
-            backgroundImage={urlProvider.nav.listImgUrl}
-            backgroundColor="lightgray"
-          />
-          <CirCleButton
-            className="posts_detail_nav_button"
-            primary={true}
-            backgroundImage={urlProvider.nav.heartImgUrl}
-          />
-          <CirCleButton
-            className="posts_detail_nav_button"
-            primary={true}
-            backgroundImage={urlProvider.nav.shareImgUrl}
-          />
-        </div>
-        <CirCleButton
-          className="posts_detail_nav_button"
-          primary={true}
-          backgroundImage={urlProvider.nav.downImgUrl}
-          backgroundColor="whitesmoke"
-          onClick={toTheBottom}
-        />
-      </div> */}
     </div>
   );
 };
