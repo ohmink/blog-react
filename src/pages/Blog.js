@@ -8,7 +8,6 @@ import { PostsListBox } from "./items/PostsListBox";
 import { Loading } from "./Loading";
 import { getAll, isLogin } from "../utils/PostsApi";
 import { getTagList } from "../utils/PostsHelper";
-import urlProvider from "../utils/ImageProvider";
 
 export const Blog = ({ history }) => {
   const [tags, setTags] = useState(null);
@@ -76,7 +75,16 @@ export const Blog = ({ history }) => {
       }
     };
 
+    const tryLogin = (e) => {
+      if (e.ctrlKey && e.altKey && e.key === "/") openLogin();
+    };
+
     getPostsData();
+    window.addEventListener("keydown", tryLogin);
+
+    return () => {
+      window.removeEventListener("keydown", tryLogin);
+    };
   }, []);
 
   if (loading) return <Loading />;
@@ -112,15 +120,7 @@ export const Blog = ({ history }) => {
             }
           })}
         </ul>
-        {/* <div>
-          <img
-            alt=""
-            className="set_img"
-            onClick={openLogin}
-            src={urlProvider.set}
-          />
-          <Login history={history} />
-        </div> */}
+        <Login history={history} />
       </main>
     </div>
   );
