@@ -95,7 +95,6 @@ export const Blog = ({ history }) => {
     tagCount: tagCount,
     history: history,
   };
-  console.log(postsData);
 
   return (
     <div className="blog_template">
