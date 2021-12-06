@@ -3,14 +3,7 @@ import "./styles/PostsListBox.css";
 import { TagBox } from "./TagBox";
 import { getUpdateTime } from "../../utils/PostsHelper";
 
-export const PostsListBox = ({
-  id,
-  title,
-  tags,
-  contents,
-  updatedAt,
-  history,
-}) => {
+export const PostsListBox = ({ id, title, tags, updatedAt, history }) => {
   const tagArray = tags.split(" ");
   const updateTime = getUpdateTime(updatedAt);
   const clickedBox = () => {

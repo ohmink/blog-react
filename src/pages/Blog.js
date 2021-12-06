@@ -95,6 +95,7 @@ export const Blog = ({ history }) => {
     tagCount: tagCount,
     history: history,
   };
+  console.log(postsData);
 
   return (
     <div className="blog_template">
@@ -103,14 +104,13 @@ export const Blog = ({ history }) => {
         <SideBar contentsType={"TagList"} data={data} homeFunction={goHome} />
         <ul className="posts_container">
           {postsData.map((data) => {
-            if (data.tag && data.contents)
+            if (data.tag)
               return (
                 <PostsListBox
                   key={data._id}
                   id={data._id}
                   title={data.title}
                   tags={data.tag}
-                  contents={data.contents}
                   updatedAt={data.createdAt}
                   history={history}
                 />
