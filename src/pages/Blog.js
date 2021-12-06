@@ -59,7 +59,6 @@ export const Blog = ({ history }) => {
       setOriginData(null);
 
       const res = await getAll();
-      console.log(res);
       const [tagArray, countMap] = getTagList(res);
 
       setOriginData(res);
