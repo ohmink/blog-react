@@ -32,6 +32,17 @@ export const getAll = async () => {
   }
 };
 
+export const getListByTag = async (tag) => {
+  try {
+    const answer = await axios.get(
+      `https://ohmink-blog-server.herokuapp.com/posts/getListByTag/${tag}`
+    );
+    return answer.data;
+  } catch (error) {
+    return error;
+  }
+};
+
 export const getDetail = async (postsId) => {
   try {
     const answer = await axios.get(

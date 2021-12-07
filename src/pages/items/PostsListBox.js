@@ -3,9 +3,9 @@ import "./styles/PostsListBox.css";
 import { TagBox } from "./TagBox";
 import { getUpdateTime } from "../../utils/PostsHelper";
 
-export const PostsListBox = ({ id, title, tags, updatedAt, history }) => {
+export const PostsListBox = ({ id, title, tags, createdAt, history }) => {
   const tagArray = tags.split(" ");
-  const updateTime = getUpdateTime(updatedAt);
+  const createdTime = getUpdateTime(createdAt);
   const clickedBox = () => {
     history.push(`/post/:${id}`);
   };
@@ -18,7 +18,7 @@ export const PostsListBox = ({ id, title, tags, updatedAt, history }) => {
           <TagBox key={`tag_box_${idx}`} tagName={tag} />
         ))}
       </div>
-      <p className="posts_updated_time">{updateTime}</p>
+      <p className="posts_updated_time">{createdTime}</p>
     </li>
   );
 };
