@@ -6,7 +6,7 @@ import { SideBar } from "./items/SideBar";
 import { Login } from "./items/Login";
 import { PostsListBox } from "./items/PostsListBox";
 import { Loading } from "./Loading";
-import { getAll, isLogin } from "../utils/PostsApi";
+import { getAll, getListByTag, isLogin } from "../utils/PostsApi";
 import { getTagList } from "../utils/PostsHelper";
 
 export const Blog = ({ history }) => {
