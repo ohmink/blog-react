@@ -11,11 +11,10 @@ import { getTagList } from "../utils/PostsHelper";
 
 export const Blog = ({ history }) => {
   const [tags, setTags] = useState(null);
-  const [tagCount, setTagCount] = useState(null);
   const [curTag, setCurTag] = useState(null);
-  const [originData, setOriginData] = useState(null);
-  const [postsData, setPostsData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [tagCount, setTagCount] = useState(null);
+  const [postsData, setPostsData] = useState(null);
 
   const goHome = () => window.location.reload();
 
@@ -28,14 +27,12 @@ export const Blog = ({ history }) => {
     }
   };
 
-  const tagButtonClicked = (e) => {
+  const tagButtonClicked = async (e) => {
     const selectedTag = e.target;
     const selectedList =
-      selectedTag.id === "전체보기"
-        ? originData
-        : originData.filter((data) =>
-            String(data.tag).includes(selectedTag.id)
-          );
+      selectedTag.id !== "전체보기"
+        ? await getListByTag(selectedTag.id)
+        : await getAll();
 
     setPostsData(selectedList);
 
@@ -43,6 +40,7 @@ export const Blog = ({ history }) => {
     curTag.style.color = "black";
     selectedTag.style.fontWeight = "bold";
     selectedTag.style.color = "lightseagreen";
+
     setCurTag(selectedTag);
 
     if (selectedList.length <= 8)
@@ -56,12 +54,10 @@ export const Blog = ({ history }) => {
       setTags(null);
       setTagCount(null);
       setPostsData(null);
-      setOriginData(null);
 
       const res = await getAll();
       const [tagArray, countMap] = getTagList(res);
 
-      setOriginData(res);
       setPostsData(res);
       setTags(tagArray);
       setTagCount(countMap);
@@ -102,22 +98,18 @@ export const Blog = ({ history }) => {
       <main className="blog_template_main">
         <SideBar contentsType={"TagList"} data={data} homeFunction={goHome} />
         <ul className="posts_container">
-          {postsData.map((data) => {
-            if (data.tag)
-              return (
-                <PostsListBox
-                  key={data._id}
-                  id={data._id}
-                  title={data.title}
-                  tags={data.tag}
-                  updatedAt={data.createdAt}
-                  history={history}
-                />
-              );
-            else {
-              return null;
-            }
-          })}
+          {postsData.map((data) =>
+            data.tag ? (
+              <PostsListBox
+                key={data._id}
+                id={data._id}
+                title={data.title}
+                tags={data.tag}
+                createdAt={data.createdAt}
+                history={history}
+              />
+            ) : null
+          )}
         </ul>
         <Login history={history} />
       </main>
